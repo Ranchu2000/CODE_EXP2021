@@ -1,64 +1,99 @@
 import React, {useState} from 'react';
-import { Text, StyleSheet, View, Button, ScrollView } from 'react-native';
+import { Text, StyleSheet, View, Button, ScrollView, TouchableOpacity, Modal } from 'react-native';
+import {FontAwesome5} from '@expo/vector-icons';
+import { Card } from 'react-native-paper';
+// import Modal from 'react-native-modal';
 
+// like function? 
+//todo: profile picture + add friends pop up icon
 const HomeScreen = ({ navigation }) => {
+  const [isVisible, setVisible]= useState(false);
+  const toggleModel= ()=>{
+    setVisible(!isVisible);
+  };
   return (
-    <View style={{flex: 1}}> 
-      <Text style={styles.text}>Lets Trash it!</Text>
+    <View> 
+      <View style= {styles.header}>
+        <Text style={styles.text}>Lets Trash it!</Text>
+        <TouchableOpacity 
+        style= {styles.friendicon}
+        onPress= {toggleModel}>
+          <FontAwesome5 name= "user-friends" size={24} color= "black" />
+        </TouchableOpacity>
+      </View>
+      <Modal 
+      transparent= {true}
+      visible= {isVisible}>
+        <Text> add friends! </Text>
+      </Modal>
+    
       <ScrollView>
-      <View style= {styles.post}>
-            <Text> 14th June 2021 0900hrs </Text>
-            <Text> Recycling Activity 1 By Yu Fei: </Text>
-            <Text> Recycled 5kg of Paper</Text>
-            <Text> 2 Reward Points Earned!</Text>
-      </View>
-      <View style= {styles.post}>
+      <Card style= {styles.card}>
+        <Card.Title title= "Recycling Activity By Yu Fei"/>
+        <Card.Content>
+          <Text> 14th June 2021 0900hrs </Text>
+          <Text> Recycled 5kg of Paper</Text>
+          <Text> 2 Reward Points Earned!</Text>
+        </Card.Content>
+      </Card>
+      <Card style= {styles.card}>
+        <Card.Title title= " Reducing Activity By Jian Rong:"/>
+        <Card.Content>
             <Text> 13th June 2021 0900hrs </Text>
-            <Text> Reducing Activity 2 By Jian Rong: </Text>
             <Text> Brought my own cup to Starbux</Text>
             <Text> 0.2 Reward Points Earned!</Text>
-      </View>
-      <View style= {styles.post}>
+        </Card.Content>
+      </Card>
+      <Card style= {styles.card}>
+        <Card.Title title= "Recycling Activity By Yu Fei"/>
+        <Card.Content>
+          <Text> 14th June 2021 0900hrs </Text>
+          <Text> Recycled 5kg of Paper</Text>
+          <Text> 2 Reward Points Earned!</Text>
+        </Card.Content>
+      </Card>
+      <Card style= {styles.card}>
+        <Card.Title title= " Reducing Activity By Jian Rong:"/>
+        <Card.Content>
             <Text> 13th June 2021 0900hrs </Text>
-            <Text> Reducing Activity 2 By Jian Rong: </Text>
             <Text> Brought my own cup to Starbux</Text>
             <Text> 0.2 Reward Points Earned!</Text>
-      </View>
-      <View style= {styles.post}>
+        </Card.Content>
+      </Card>
+      <Card style= {styles.card}>
+        <Card.Title title= "Recycling Activity By Yu Fei"/>
+        <Card.Content>
+          <Text> 14th June 2021 0900hrs </Text>
+          <Text> Recycled 5kg of Paper</Text>
+          <Text> 2 Reward Points Earned!</Text>
+        </Card.Content>
+      </Card>
+      <Card style= {styles.card}>
+        <Card.Title title= " Reducing Activity By Jian Rong:"/>
+        <Card.Content>
             <Text> 13th June 2021 0900hrs </Text>
-            <Text> Reducing Activity 2 By Jian Rong: </Text>
             <Text> Brought my own cup to Starbux</Text>
             <Text> 0.2 Reward Points Earned!</Text>
-      </View>
-      <View style= {styles.post}>
-            <Text> 13th June 2021 0900hrs </Text>
-            <Text> Reducing Activity 2 By Jian Rong: </Text>
-            <Text> Brought my own cup to Starbux</Text>
-            <Text> 0.2 Reward Points Earned!</Text>
-      </View>
-      <View style= {styles.post}>
-            <Text> Hello Yufei can you see this</Text>
-      </View>
-      <Button
-        onPress={() => navigation.navigate('Resource')}
-        title="Resource!"
-      />
-      <Button
-        onPress={() => navigation.navigate('Activity1')}
-        title="Activity!"
-      />
+        </Card.Content>
+      </Card>
     </ScrollView>
     </View>
   );
 };
-
-
 const styles = StyleSheet.create({
+  header:{
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
+  friendicon:{
+    marginRight: 10,
+    marginTop: 5
+  },
   text: {
     fontSize: 30
   },
-  post:{
-      height: 200
+  card:{
+    marginBottom: 5
   }
 });
 

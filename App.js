@@ -82,9 +82,9 @@ const App= function(props){
           component={Activity2Screen}
           options={{title: 'Activity'}}
       />
-    </Stack.Navigator>
-    </NavigationContainer>;
-
+    </Tab.Navigator>
+    </NavigationContainer>
+  )
 }
   
 export default ()=>{
