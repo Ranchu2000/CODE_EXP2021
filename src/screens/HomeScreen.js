@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { Text, StyleSheet, View, Button, ScrollView } from 'react-native';
 
-
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={{flex: 1}}> 
@@ -60,4 +59,3 @@ const styles = StyleSheet.create({
 });
 
 export default HomeScreen;
-
