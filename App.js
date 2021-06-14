@@ -38,6 +38,11 @@ const App= function(props){
           component={Activity1Screen}
           options={{title: 'Activity'}}
       />
+      <Stack.Screen
+          name= "Activity2"
+          component={Activity2Screen}
+          options={{title: 'Activity'}}
+      />
     </Stack.Navigator>
     </NavigationContainer>;
 }
