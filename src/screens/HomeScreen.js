@@ -44,6 +44,10 @@ const HomeScreen = ({ navigation }) => {
         onPress={() => navigation.navigate('Resource')}
         title="Resource!"
       />
+      <Button
+        onPress={() => navigation.navigate('Activity1')}
+        title="Activity!"
+      />
     </ScrollView>
     </View>
   );

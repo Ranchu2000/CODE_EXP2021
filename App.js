@@ -5,6 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './src/screens/HomeScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import ResourceScreen from './src/screens/ResourceScreen';
+import Activity1Screen from './src/screens/Activity1Screen';
+import Activity2Screen from './src/screens/Activity2Screen';
 import {Feather} from '@expo/vector-icons';
 
 
@@ -30,6 +32,11 @@ const App= function(props){
           name= "Resource"
           component={ResourceScreen}
           options={{title: 'Waste Articles'}}
+      />
+      <Stack.Screen
+          name= "Activity1"
+          component={Activity1Screen}
+          options={{title: 'Activity'}}
       />
     </Stack.Navigator>
     </NavigationContainer>;
