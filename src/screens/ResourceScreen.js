@@ -10,6 +10,7 @@ const ResourceScreen = ({ navigation }) => {
       <ScrollView
       horizontal= {true}
       showsHorizontalScrollIndicator= {false}
+      
       >
       <View style= {styles.post}>
             <Text> 14th June 2021 0900hrs </Text>
@@ -91,7 +92,7 @@ const styles = StyleSheet.create({
   },
   section:{
       flexDirection: "row"
-  }
+  },
   post:{
       height: 200,
       flex: 1,
