@@ -2,19 +2,19 @@ import React, {useState} from 'react';
 import { Text, StyleSheet, View, Button, ScrollView, TextInput } from 'react-native';
 
 
-const Activity2Screen = ({ navigation }) => {
+const Reuse = ({ navigation }) => {
     const [pressed, setPressed]= useState();
     //if (pressed){
         return (
             <View style={{flex: 1}}> 
-                <View style= {styles.top}>
+                {/* <View style= {styles.top}>
                     <Button
                     onPress={() => navigation.navigate('Activity1')}
                     title="Recycle!"/>
                     <Button
                     onPress={() => navigation.navigate('Activity2')}
                     title="Reduce!"/>
-                </View>
+                </View> */}
                 <Button 
                     title= "Scan QR Code"
                     onPress= {()=> setPressed (!pressed)}
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Activity2Screen;
+export default Reuse;
