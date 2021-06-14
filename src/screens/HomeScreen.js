@@ -37,6 +37,9 @@ const HomeScreen = ({ navigation }) => {
             <Text> Brought my own cup to Starbux</Text>
             <Text> 0.2 Reward Points Earned!</Text>
       </View>
+      <View style= {styles.post}>
+            <Text> Hello Yufei can you see this</Text>
+      </View>
       <Button
         onPress={() => navigation.navigate('Resource')}
         title="Resource!"
