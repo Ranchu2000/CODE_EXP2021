@@ -6,6 +6,9 @@ import LoginScreen from './src/screens/LoginScreen';
 import ResourceScreen from './src/screens/ResourceScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
+import Activity1Screen from './src/screens/Activity1Screen';
+import Activity2Screen from './src/screens/Activity2Screen';
+
 import {Feather} from '@expo/vector-icons';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -57,7 +60,6 @@ const App= function(props){
           component={ResourceScreen}
           options={{title: 'Waste Articles'}}
       />
-
       <Tab.Screen
           name= "Settings"
           component={SettingsScreen}
@@ -69,8 +71,20 @@ const App= function(props){
           component={ProfileScreen}
           options={{title: 'Profile'}}
       />
-    </Tab.Navigator>
-  </NavigationContainer>)
+
+      <Tab.Screen
+          name= "Activity1"
+          component={Activity1Screen}
+          options={{title: 'Activity'}}
+      />
+      <Tab.Screen
+          name= "Activity2"
+          component={Activity2Screen}
+          options={{title: 'Activity'}}
+      />
+    </Stack.Navigator>
+    </NavigationContainer>;
+
 }
   
 export default ()=>{
