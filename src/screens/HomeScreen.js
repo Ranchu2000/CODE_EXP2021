@@ -5,7 +5,7 @@ import { Text, StyleSheet, View, Button, ScrollView } from 'react-native';
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={{flex: 1}}> 
-      <Text style={styles.text}>Hi there!</Text>
+      <Text style={styles.text}>Hellooooo there!</Text>
     </View>
   );
 };
