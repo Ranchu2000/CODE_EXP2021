@@ -5,13 +5,22 @@ import { Text, StyleSheet, View, Button, ScrollView, TextInput } from 'react-nat
 const LoginScreen = ({ navigation }) => {
   return (
     <View style={{flex: 1}}> 
-      <Text style={styles.text}>Hi there!</Text>
+      <Text style={styles.text}>Log In Here!</Text>
       <TextInput 
       style= {styles.input}
+      placeholder= "Username"
+      />
+      <TextInput 
+      style= {styles.input}
+      placeholder= "Password"
       />
       <Button
         onPress={() => navigation.navigate('Home')}
         title="Login"
+      />
+      <Button
+        onPress={() => console.log("register new user!")}
+        title="Sign Up"
       />
     </View>
   );

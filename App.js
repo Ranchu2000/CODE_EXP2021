@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './src/screens/HomeScreen';
 import LoginScreen from './src/screens/LoginScreen';
+import ResourceScreen from './src/screens/ResourceScreen';
 import {Feather} from '@expo/vector-icons';
 
 
@@ -24,6 +25,11 @@ const App= function(props){
           name= "Home"
           component={HomeScreen}
           options={{title: 'Home'}}
+      />
+      <Stack.Screen
+          name= "Resource"
+          component={ResourceScreen}
+          options={{title: 'Waste Articles'}}
       />
     </Stack.Navigator>
     </NavigationContainer>;
