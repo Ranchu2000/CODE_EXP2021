@@ -1,85 +1,109 @@
 import React, {useState} from 'react';
-import { Text, StyleSheet, View, Button, ScrollView } from 'react-native';
+import { Text, StyleSheet, View, Button, ScrollView, Dimensions } from 'react-native';
+import { Card } from 'react-native-paper';
+import {FontAwesome, FontAwesome5, Foundation} from '@expo/vector-icons';
 
-
+// import images into each text and fill legit infomation to each text
+// contr
+const  {height, width}= Dimensions.get("window");
 const ResourceScreen = ({ navigation }) => {
+      
   return (
-    <View style={{flex: 1}}> 
+    <View> 
       <Text style={styles.text}>Waste Articles!</Text>
-      <Text style={styles.text}>Latest News!</Text>
+      <ScrollView>
+      <View style= {styles.header}> 
+            <Text style={styles.text}>Latest News!</Text>
+            <FontAwesome name= "newspaper-o" size= {44} color= "black" />
+      </View>
       <ScrollView
       horizontal= {true}
       showsHorizontalScrollIndicator= {false}
-
       >
-      <View style= {styles.post}>
-            <Text> 14th June 2021 0900hrs </Text>
-            <Text> Recycling Activity 1 By Yu Fei: </Text>
-            <Text> Recycled 5kg of Paper</Text>
-            <Text> 2 Reward Points Earned!</Text>
-      </View>
-      <View style= {styles.post}>
-            <Text> 13th June 2021 0900hrs </Text>
-            <Text> Reducing Activity 2 By Jian Rong: </Text>
-            <Text> Brought my own cup to Starbux</Text>
-            <Text> 0.2 Reward Points Earned!</Text>
-      </View>
-      <View style= {styles.post}>
-            <Text> 13th June 2021 0900hrs </Text>
-            <Text> Reducing Activity 2 By Jian Rong: </Text>
-            <Text> Brought my own cup to Starbux</Text>
-            <Text> 0.2 Reward Points Earned!</Text>
-      </View>
+      <Card style= {styles.post}>
+            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Content>
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+            </Card.Content>
+      </Card>
+      <Card style= {styles.post}>
+            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Content>
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+            </Card.Content>
+      </Card>
+      <Card style= {styles.post}>
+            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Content>
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+            </Card.Content>
+      </Card>
+      <Card style= {styles.post}>
+            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Content>
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+            </Card.Content>
+      </Card>
+      
     </ScrollView>
 
-    <Text style={styles.text}>Recycling Tips!</Text>
+    <View style= {styles.header}> 
+      <Text style={styles.text}>Recycling Tips!</Text>
+      <Foundation name= "lightbulb" size= {44} color= "black" />
+    </View>
       <ScrollView
       horizontal= {true}
       showsHorizontalScrollIndicator= {false}
       >
-      <View style= {styles.post}>
-            <Text> 14th June 2021 0900hrs </Text>
-            <Text> Recycling Activity 1 By Yu Fei: </Text>
-            <Text> Recycled 5kg of Paper</Text>
-            <Text> 2 Reward Points Earned!</Text>
-      </View>
-      <View style= {styles.post}>
-            <Text> 13th June 2021 0900hrs </Text>
-            <Text> Reducing Activity 2 By Jian Rong: </Text>
-            <Text> Brought my own cup to Starbux</Text>
-            <Text> 0.2 Reward Points Earned!</Text>
-      </View>
-      <View style= {styles.post}>
-            <Text> 13th June 2021 0900hrs </Text>
-            <Text> Reducing Activity 2 By Jian Rong: </Text>
-            <Text> Brought my own cup to Starbux</Text>
-            <Text> 0.2 Reward Points Earned!</Text>
-      </View>
-    </ScrollView>
+      <Card style= {styles.post}>
+            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Content>
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+            </Card.Content>
+      </Card>
+      <Card style= {styles.post}>
+            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Content>
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+            </Card.Content>
+      </Card>
+      <Card style= {styles.post}>
+            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Content>
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+            </Card.Content>
+      </Card>
 
-    <Text style={styles.text}>Contribute!</Text>
+    </ScrollView>
+    
+    <View style= {styles.header}>
+      <Text style={styles.text}>Contribute!</Text>
+      <FontAwesome5 name= "first-aid" size= {44} color= "black" />
+    </View>
       <ScrollView
       horizontal= {true}
       showsHorizontalScrollIndicator= {false}
       >
-      <View style= {styles.post}>
-            <Text> 14th June 2021 0900hrs </Text>
-            <Text> Recycling Activity 1 By Yu Fei: </Text>
-            <Text> Recycled 5kg of Paper</Text>
-            <Text> 2 Reward Points Earned!</Text>
-      </View>
-      <View style= {styles.post}>
-            <Text> 13th June 2021 0900hrs </Text>
-            <Text> Reducing Activity 2 By Jian Rong: </Text>
-            <Text> Brought my own cup to Starbux</Text>
-            <Text> 0.2 Reward Points Earned!</Text>
-      </View>
-      <View style= {styles.post}>
-            <Text> 13th June 2021 0900hrs </Text>
-            <Text> Reducing Activity 2 By Jian Rong: </Text>
-            <Text> Brought my own cup to Starbux</Text>
-            <Text> 0.2 Reward Points Earned!</Text>
-      </View>
+      <Card style= {styles.post}>
+            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Content>
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+            </Card.Content>
+      </Card>
+      <Card style= {styles.post}>
+            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Content>
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+            </Card.Content>
+      </Card>
+      <Card style= {styles.post}>
+            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Content>
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+            </Card.Content>
+      </Card>
+
+    </ScrollView>
     </ScrollView>
     </View>
   );
@@ -88,11 +112,22 @@ const ResourceScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 30
+      fontSize: 30,
+      marginLeft: 10,
+      marginTop: 15,
+      marginBottom: 15,
+  },
+  header: {
+      flexDirection: 'row',
+      justifyContent: 'space-evenly',
+      marginTop: 10
   },
   post:{
-      height: 200,
-      flex: 1,
+      width: width * 3/4,
+      marginLeft: 10
+  },
+  background: {
+      flexDirection: 'row'
   }
 });
 
