@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, StyleSheet, View, Button, ScrollView, Dimensions } from 'react-native';
+import { StatusBar, Text, StyleSheet, View, Button, ScrollView, Dimensions } from 'react-native';
 import { Card } from 'react-native-paper';
 import {FontAwesome, FontAwesome5, Foundation} from '@expo/vector-icons';
 import { createStackNavigator } from "@react-navigation/stack";
@@ -10,7 +10,8 @@ const  {height, width}= Dimensions.get("window");
 function ResourceScreen ({ navigation }) {
       
   return (
-    <View> 
+    <View style= {[styles.container, { backgroundColor: '#EAE6EB' }]}> 
+
       <ScrollView>
       <View style= {styles.header}> 
             <Text style={styles.text}>Latest News!   </Text>

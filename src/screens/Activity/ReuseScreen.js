@@ -7,7 +7,7 @@ import {Camera} from 'expo-camera';
 const Reuse = ({ navigation }) => {
     const [isVisible, setVisible]= useState(false);
         return (
-            <View> 
+            <View style={[styles.container, { backgroundColor: '#EAE6EB' }]}> 
                 <Button 
                     title= "Scan QR Code"
                     onPress= {()=> setVisible (!isVisible)}/>

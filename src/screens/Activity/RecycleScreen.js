@@ -18,7 +18,7 @@ const Recycle = ({ navigation }) => {
 
     return (
     <ScrollView style={{flex: 1}}> 
-        <View style= {styles.top}>
+        <View style= {[styles.top, { backgroundColor: '#EAE6EB' }]}>
         </View>
         <Card style= {styles.topCard}>
             <Card.Title title='What will you be recycling:'/>

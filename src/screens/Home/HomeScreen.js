@@ -16,7 +16,7 @@ function HomeScreen ({ navigation }) {
   const [isVisible, setVisible]= useState(false);
   const [pressed, setPressed]= useState(false);
   return (
-    <View style= {styles.screen}> 
+    <View style= {[styles.screen, { backgroundColor: '#EAE6EB' }]}> 
       <View style={styles.header}>
         <Card onPress={() => {
             navigation.navigate("Activities");
@@ -219,8 +219,8 @@ export default function HomeStack({ navigation }) {
         )
       }} 
         />
-        <Stack.Screen name="Activities" component={ActivityScreen} />
-        <Stack.Screen name="Catalogue" component={CatalogueScreen} />
+        <Stack.Screen options={{headerShown: false}} name="Activities" component={ActivityScreen} />
+        <Stack.Screen options={{headerShown: false}} name="Catalogue" component={CatalogueScreen} />
         <Stack.Screen name="Friends" component={FriendsScreen} />
     </Stack.Navigator>
   );
