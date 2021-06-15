@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, ScrollView, Text, View, TouchableOpacity, Image, Dimensions } from 'react-native';
 const {height, width}= Dimensions.get("window");
+
 export default function ArticleScreen() {
     return (
         <ScrollView> 
