@@ -14,6 +14,7 @@ import {Feather} from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+//login as the default page
 const Tab = createBottomTabNavigator();
 
 const App= function(props){
