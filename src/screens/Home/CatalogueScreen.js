@@ -4,14 +4,14 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import {List, Card} from "react-native-paper"
 import { Feather, FontAwesome5 } from '@expo/vector-icons'; 
-import RewardsScreen from '../Profile/RewardsScreen';
+import TransactionsScreen from '../Profile/TransactionsScreen';
 
 const Tab = createMaterialTopTabNavigator();
 
 function CatalogueScreen({ navigation }) {
   return(
     
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: '#EAE6EB' }]}>
       <ScrollView>
       <List.Item
         title="Total Coins:"
@@ -19,17 +19,17 @@ function CatalogueScreen({ navigation }) {
         description="more"
         left={props => 
         <View style={{justifyContent: "center", marginLeft: 23, marginRight: 23}}>
-          <FontAwesome5 name="wallet" size={24} color="black" />
+          <FontAwesome5 name="wallet" size={24} color="#5DBB63" />
         </View>
         }
         right={props =>
           <View style={styles.icons}>
             <Text>3000</Text>
-            <FontAwesome5 name="coins" size={24} color="black" />
+            <FontAwesome5 name="coins" size={24} color="#5DBB63" />
           </View>
         }
         onPress={() => {
-          navigation.navigate("Rewards");
+          navigation.navigate("Transactions");
       }}
       />
       
@@ -177,7 +177,7 @@ function CatalogueScreen({ navigation }) {
         }
         right={props =>
           <View style={styles.icons}>
-            <Text>300</Text>
+            <Text>200</Text>
             <FontAwesome5 name="coins" size={18} color="5DBB63" />
           </View>
         }
@@ -192,8 +192,19 @@ const Stack = createStackNavigator();
 export default function CatalogueStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Catalogue" component={CatalogueScreen} />
-      <Stack.Screen options={{headerShown: false}} name="Rewards" component={RewardsScreen} />
+      <Stack.Screen 
+      options={{
+        headerStyle: {
+          backgroundColor: '#5DBB63',
+        },
+        headerTintColor: 'black',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}
+      name="Catalogue" 
+      component={CatalogueScreen} />
+      <Stack.Screen options={{headerShown: false}} name="Transactions" component={TransactionsScreen} />
     </Stack.Navigator>
   );
 }

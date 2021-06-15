@@ -25,12 +25,12 @@ const Recycle = ({ navigation }) => {
       <View style= {[styles.top, { backgroundColor: '#EAE6EB' }]}>
       </View>
         <Card style= {styles.topCard}>
-            <Card.Title title='What will you be recycling:'/>
+            <Card.Title title='Select recyclables:'/>
         
             <TouchableOpacity onPress= {()=> setPressed1 (!pressed1)} style= {styles.catergory}>
                 <View style= {styles.top}> 
-                    <Text style= {styles.catText}> Plastic </Text>  
                     <FontAwesome5 name="prescription-bottle" style= {styles.icons}  />
+                    <Text style= {styles.catText}> Plastic </Text>  
                 </View>
                 {pressed1? 
                 <MaterialCommunityIcons name= "sticker-check-outline" style= {styles.marker}/>
@@ -39,8 +39,8 @@ const Recycle = ({ navigation }) => {
 
             <TouchableOpacity onPress= {()=> setPressed2 (!pressed2)} style= {styles.catergory}>
                 <View style= {styles.top}> 
-                    <Text style= {styles.catText}> Glass</Text>  
                     <FontAwesome name= "glass"  style= {styles.icons} />
+                    <Text style= {styles.catText}> Glass</Text>  
                 </View>
                 {pressed2? 
                 <MaterialCommunityIcons name= "sticker-check-outline" style= {styles.marker}/>
@@ -49,8 +49,8 @@ const Recycle = ({ navigation }) => {
 
             <TouchableOpacity onPress= {()=> setPressed3 (!pressed3)} style= {styles.catergory}>
                 <View style= {styles.top}> 
-                    <Text style= {styles.catText}> Paper </Text>  
                     <Ionicons name= "newspaper" style= {styles.icons} />
+                    <Text style= {styles.catText}> Paper </Text>  
                 </View>
                 {pressed3? 
                 <MaterialCommunityIcons name= "sticker-check-outline" style= {styles.marker}/>
@@ -59,8 +59,8 @@ const Recycle = ({ navigation }) => {
 
             <TouchableOpacity onPress= {()=> setPressed4 (!pressed4)} style= {styles.catergory}>
                 <View style= {styles.top}> 
-                    <Text style= {styles.catText}> Metal </Text>  
                     <FontAwesome5 name="drum-steelpan" style= {styles.icons} />
+                    <Text style= {styles.catText}> Metal </Text>                    
                 </View>
                 {pressed4? 
                 <MaterialCommunityIcons name= "sticker-check-outline" style= {styles.marker}/>
@@ -69,8 +69,8 @@ const Recycle = ({ navigation }) => {
 
             <TouchableOpacity onPress= {()=> setPressed4 (!pressed5)} style= {styles.catergory}>
                 <View style= {styles.top}> 
-                    <Text style= {styles.catText}> Electronics </Text>  
                     <Feather name="hard-drive" style= {styles.icons} />
+                    <Text style= {styles.catText}> Electronics </Text>                    
                 </View>
                 {pressed5? 
                 <MaterialCommunityIcons name= "sticker-check-outline" style= {styles.marker}/>
@@ -81,7 +81,7 @@ const Recycle = ({ navigation }) => {
 
 
         <Card>
-        <Card.Title title= "Arrange A Collection!"/>
+        <Card.Title title= "Collection Details:"/>
 
        
         <List.Accordion
@@ -168,8 +168,7 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     catText:{
-        fontSize: 30,
-        marginLeft: 10
+        fontSize: 14,
     },
     catergory:{
         flexDirection: "row",
@@ -193,18 +192,22 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     icons:{
-        fontSize: 24,
-        color: "black",
-        marginTop: 5
+        fontSize: 18,
+        color: "#5DBB63",
+        justifyContent: "center",
+        alignItems: "center",
+        marginHorizontal: 10
     },
     marker:{
-        fontSize: 30,
-        color: "black",
+        fontSize: 24,
+        color: "#5DBB63",
+        justifyContent: "center",
+        alignItems: "center",
         marginRight: 10,
     },
     submit:{
         fontSize: 40,
-        color: 'black',
+        color: '#5DBB63',
         marginTop: 10,
         marginBottom: 10,
         
