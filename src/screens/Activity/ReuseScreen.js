@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import { Text, StyleSheet, View, Button, ScrollView, TextInput } from 'react-native';
 import Modal from 'react-native-modal';
 import { Card } from 'react-native-paper';
-import {Camera} from 'expo-camera';
+import {Feather, FontAwesome5, Ionicons, FontAwesome, AntDesign, Entypo, Fontisto} from '@expo/vector-icons';
+//import {Camera} from 'expo-camera';
 
 const Reuse = ({ navigation }) => {
     const [isVisible, setVisible]= useState(false);
@@ -19,18 +20,28 @@ const Reuse = ({ navigation }) => {
                 visible= {isVisible}
                 >
                     <Card>
-                    <Card.Title title= "You Have Received 0.5 Points!"/>
+                    <Card.Title 
+                        title= "Transaction Completed"
+                        subtitle= "You have earned 0.5 points!"
+                        />
                     <Card.Content>
-                        <Text>Store: LiHo @ Ang Moh Kio Hub </Text>
+                        <Text>Location: LiHo @ Ang Moh Kio Hub </Text>
                         <Text>You have saved:  </Text>
-                        <Text>  - 2 x Cups</Text>
-                        <Text>  - 2 x Straws</Text>
+                        <View style= {styles.saved} >
+                            <Text style= {styles.savedText}>  - 2 x Cups</Text>
+                            <Entypo name= "cup" style= {styles.icons}/>
+                        </View>
+                        <View style= {styles.saved}>
+                            <Text style= {styles.savedText}>  - 2 x Bags</Text>
+                            <Fontisto name= "shopping-bag-1" style= {styles.icons}/>
+                        </View>
+                        <Text> Thank you for reducing wastage!</Text>
                         <Button 
                             title= "Confirm"
                             onPress={()=>setVisible(false)} />
                     </Card.Content>
                     </Card>
-            </Modal>
+            </Modal> 
             </View>)
     
 };
@@ -44,6 +55,18 @@ const styles = StyleSheet.create({
         borderColor:'black',
         borderWidth: 1,
     },
+    icons:{
+        fontSize: 18,
+        color: 'black',
+        marginLeft: 15,
+        marginBottom: 5
+    },
+    saved:{
+        flexDirection: 'row',
+    },
+    savedText:{
+        marginTop: 5
+    }
 
 
 });

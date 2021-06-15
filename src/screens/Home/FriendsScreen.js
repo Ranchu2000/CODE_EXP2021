@@ -21,10 +21,10 @@ export default function FriendsScreen() {
         <View> 
           <Card>
             <Card.Title 
-              title= "Rong Rong"
+              title= "Damian"
               left={(props) => <Ionicons name= "person-circle-sharp" style= {styles.friendprofile}/>}
               right={(props) => <Button title= "Add" onPress={()=> setPressed(false)}/>}
-              subtitle= "Email Address: Rongrong@gmail.com"/>
+              subtitle= "Email Address: damian123@gmail.com"/>
           </Card>
         </View>
       : null}

@@ -27,12 +27,12 @@ function HomeScreen ({ navigation }) {
       <ScrollView>
       <Card style= {styles.card}>
         <Card.Title 
-          title= "Recycling Activity-  Yu Fei"
+          title= "Recycling Activity- Yu Fei"
           right={(props) =><Ionicons name= "person-circle-sharp" style= {styles.friendprofile} />}
-          subtitle= "14/06/2021 09:00"/>
+          subtitle= "14/06/2021 09:00am"/>
         <Card.Content style= {styles.postText}>
-          <Text> Recycled 5kg of Paper</Text>
-          <Text> 2 Reward Points Earned!</Text>
+          <Text>Recycled 5kg of Paper</Text>
+          <Text>Earned 2 Points</Text>
         </Card.Content>
         <View style= {styles.functionicons}>
         <TouchableOpacity>
@@ -49,12 +49,12 @@ function HomeScreen ({ navigation }) {
 
       <Card style= {styles.card}>
         <Card.Title 
-          title= "Recycling Activity-  Yu Fei"
+          title= "Reusing Activity- Jian Rong"
           right={(props) =><Ionicons name= "person-circle-sharp" style= {styles.friendprofile} />}
-          subtitle= "14/06/2021 09:00"/>
+          subtitle= "13/06/2021 07:00pm"/>
         <Card.Content style= {styles.postText}>
-          <Text> Recycled 5kg of Paper</Text>
-          <Text> 2 Reward Points Earned!</Text>
+          <Text>Saved 2 straws and 2 bags @ LiHo, AMK</Text>
+          <Text>Earned 0.5 Points</Text>
         </Card.Content>
         <View style= {styles.functionicons}>
         <TouchableOpacity>
@@ -71,12 +71,34 @@ function HomeScreen ({ navigation }) {
 
       <Card style= {styles.card}>
         <Card.Title 
-          title= "Recycling Activity-  Yu Fei"
+          title= "Recycling Activity- Germaine"
           right={(props) =><Ionicons name= "person-circle-sharp" style= {styles.friendprofile} />}
-          subtitle= "14/06/2021 09:00"/>
+          subtitle= "12/06/2021 11:00am"/>
         <Card.Content style= {styles.postText}>
-          <Text> Recycled 5kg of Paper</Text>
-          <Text> 2 Reward Points Earned!</Text>
+          <Text>Recycled 2kg of Electronics</Text>
+          <Text>Earned 10 Points</Text>
+        </Card.Content>
+        <View style= {styles.functionicons}>
+        <TouchableOpacity>
+        <AntDesign name= "like2" style= {styles.functionicon}/>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <FontAwesome name= 'comments-o' style= {styles.functionicon}/>
+        </TouchableOpacity>
+        <TouchableOpacity>
+        <Entypo name= 'share-alternative' style= {styles.functionicon}/>
+        </TouchableOpacity>
+       </View>
+      </Card>
+      
+      <Card style= {styles.card}>
+        <Card.Title 
+          title= "Reusing Activity- Joy"
+          right={(props) =><Ionicons name= "person-circle-sharp" style= {styles.friendprofile} />}
+          subtitle= "11/06/2021 03:00pm"/>
+        <Card.Content style= {styles.postText}>
+          <Text>Saved 3 bags @ NTUC, Bishan</Text>
+          <Text>Earned 0.3 Points</Text>
         </Card.Content>
         <View style= {styles.functionicons}>
         <TouchableOpacity>
@@ -93,12 +115,12 @@ function HomeScreen ({ navigation }) {
 
       <Card style= {styles.card}>
         <Card.Title 
-          title= "Recycling Activity-  Yu Fei"
+          title= "Reusing Activity- Hubert"
           right={(props) =><Ionicons name= "person-circle-sharp" style= {styles.friendprofile} />}
-          subtitle= "14/06/2021 09:00"/>
+          subtitle= "11/06/2021 06:00pm"/>
         <Card.Content style= {styles.postText}>
-          <Text> Recycled 5kg of Paper</Text>
-          <Text> 2 Reward Points Earned!</Text>
+          <Text>Saved 4 Containers and 4 Utensils @ Roasted123, Toa Payoh</Text>
+          <Text>Earned 1 Points</Text>
         </Card.Content>
         <View style= {styles.functionicons}>
         <TouchableOpacity>
@@ -112,59 +134,15 @@ function HomeScreen ({ navigation }) {
         </TouchableOpacity>
        </View>
       </Card>
-
+    
       <Card style= {styles.card}>
         <Card.Title 
-          title= "Recycling Activity-  Yu Fei"
+          title= "Recycling Activity- Yue Ran"
           right={(props) =><Ionicons name= "person-circle-sharp" style= {styles.friendprofile} />}
-          subtitle= "14/06/2021 09:00"/>
+          subtitle= "10/06/2021 10:00am"/>
         <Card.Content style= {styles.postText}>
-          <Text> Recycled 5kg of Paper</Text>
-          <Text> 2 Reward Points Earned!</Text>
-        </Card.Content>
-        <View style= {styles.functionicons}>
-        <TouchableOpacity>
-        <AntDesign name= "like2" style= {styles.functionicon}/>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <FontAwesome name= 'comments-o' style= {styles.functionicon}/>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Entypo name= 'share-alternative' style= {styles.functionicon}/>
-        </TouchableOpacity>
-       </View>
-      </Card>
-
-      <Card style= {styles.card}>
-        <Card.Title 
-          title= "Recycling Activity-  Yu Fei"
-          right={(props) =><Ionicons name= "person-circle-sharp" style= {styles.friendprofile} />}
-          subtitle= "14/06/2021 09:00"/>
-        <Card.Content style= {styles.postText}>
-          <Text> Recycled 5kg of Paper</Text>
-          <Text> 2 Reward Points Earned!</Text>
-        </Card.Content>
-        <View style= {styles.functionicons}>
-        <TouchableOpacity>
-        <AntDesign name= "like2" style= {styles.functionicon}/>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <FontAwesome name= 'comments-o' style= {styles.functionicon}/>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Entypo name= 'share-alternative' style= {styles.functionicon}/>
-        </TouchableOpacity>
-       </View>
-      </Card>
-
-      <Card style= {styles.card}>
-        <Card.Title 
-          title= "Recycling Activity-  Yu Fei"
-          right={(props) =><Ionicons name= "person-circle-sharp" style= {styles.friendprofile} />}
-          subtitle= "14/06/2021 09:00"/>
-        <Card.Content style= {styles.postText}>
-          <Text> Recycled 5kg of Paper</Text>
-          <Text> 2 Reward Points Earned!</Text>
+          <Text>Recycled 3kg of Paper</Text>
+          <Text>Earned 2 Points</Text>
         </Card.Content>
         <View style= {styles.functionicons}>
         <TouchableOpacity>
