@@ -41,45 +41,45 @@ function ResourceScreen ({ navigation }) {
             </Card.Content>
       </Card>
       <Card style= {styles.post}>
-            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Title title= "37 projects to receive $3.7 million under SG Eco Fund"/> 
+            <Card.Cover source= {require('../Images/ecofund.jpg')} />
             <Card.Content>
-                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+                  <Text>A total of 37 green projects will receive $3.7 million in grants under the SG Eco Fund set up to aid sustainability efforts, Minister for Sustainability and the Environment Grace Fu announced on Saturday (May 22).Of these, 25 projects will receive up to $50,000 in funding, while the remaining 12 will...</Text>
             </Card.Content>
       </Card>
       <Card style= {styles.post}>
-            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Title title= "Singapore's recycling rate falls to 10-year low"/> 
+            <Card.Cover source= {require('../Images/recyclingrates.jpg')} />
             <Card.Content>
-                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+                  <Text>For a developed country, Singapore's domestic recycling rate was already low, at 17 per cent. Covid has been blamed for pushing down recycling rates further, although less waste was generated last year compared to 2019.The city-state’s overall recycling rate in 2020 was 52 per cent, down from 59 per...</Text>
             </Card.Content>
       </Card>
       
     </ScrollView>
 
     <View style= {styles.header}> 
-      <Text style={styles.text}>Recycling Tips!</Text>
+      <Text style={styles.text}>Conservation Tips!</Text>
       <Foundation name= "lightbulb" style= {styles.icons} />
     </View>
       <ScrollView
       horizontal= {true}
       showsHorizontalScrollIndicator= {false}
       >
-      <Card style= {styles.post}>
-            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
-            <Card.Content>
-                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
-            </Card.Content>
+       <Card style= {styles.post}>
+            <Card.Title title= "How to Recycle Different Materials"/> 
+            <Card.Cover source= {require('../Images/recycle101.jpg')} />
       </Card>
       <Card style= {styles.post}>
-            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
-            <Card.Content>
-                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
-            </Card.Content>
+            <Card.Title title= "Recycling Tips"/> 
+            <Card.Cover source= {require('../Images/recycleplastic.jpeg')} />
       </Card>
       <Card style= {styles.post}>
-            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
-            <Card.Content>
-                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
-            </Card.Content>
+            <Card.Title title= "Reduce Water Wastage"/> 
+            <Card.Cover source= {require('../Images/reduce-water.jpg')} />
+      </Card>
+      <Card style= {styles.post}>
+            <Card.Title title= "Reduce Food Wastage"/> 
+            <Card.Cover source= {require('../Images/reduce-food.jpg')} />
       </Card>
 
     </ScrollView>
@@ -93,22 +93,16 @@ function ResourceScreen ({ navigation }) {
       showsHorizontalScrollIndicator= {false}
       >
       <Card style= {styles.post}>
-            <Card.Title title= "Recycling Right at Punggol West"/> 
-            <Card.Content>
-                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
-            </Card.Content>
+            <Card.Title title= "Singapore Environment Council"/> 
+            <Card.Cover source= {require('../Images/SEC.png')} />
       </Card>
       <Card style= {styles.post}>
-            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
-            <Card.Content>
-                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
-            </Card.Content>
+            <Card.Title title= "The Ocean Cleanup"/> 
+            <Card.Cover source= {require('../Images/ocean-cleanup.png')} />
       </Card>
       <Card style= {styles.post}>
-            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
-            <Card.Content>
-                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
-            </Card.Content>
+            <Card.Title title= "Zero Waste SG"/> 
+            <Card.Cover source= {require('../Images/zero-waste.png')} />
       </Card>
 
     </ScrollView>
