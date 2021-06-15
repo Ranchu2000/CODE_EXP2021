@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from './src/screens/HomeScreen';
+import HomeScreen from './src/screens/Home/HomeScreen'
 import LoginScreen from './src/screens/LoginScreen';
 import ResourceScreen from './src/screens/ResourceScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
@@ -57,7 +57,7 @@ const App= function(props){
     <Tab.Screen
           name= "Resource"
           component={ResourceScreen}
-          options={{title: 'Waste Articles'}}
+          options={{title: 'Articles'}}
     />
 
     <Tab.Screen

@@ -3,26 +3,28 @@ import { Text, StyleSheet, View, Button, ScrollView, TouchableOpacity, TextInput
 import {Feather, FontAwesome5} from '@expo/vector-icons';
 import { Card } from 'react-native-paper';
 import Modal from 'react-native-modal';
+import { createStackNavigator } from "@react-navigation/stack";
+import ActivityScreen from '../Activity/ActivityScreen';
+import CatalogueScreen from './CatalogueScreen';
+import FriendsScreen from './FriendsScreen';
 
 //todo: profile picture + add friends pop up icon
 
 const  {height, width}= Dimensions.get("window");
-const HomeScreen = ({ navigation }) => {
+
+function HomeScreen ({ navigation }) {
   const [isVisible, setVisible]= useState(false);
-  const toggleModel= ()=>{
-    setVisible(!isVisible);
-  };
   const [pressed, setPressed]= useState();
   return (
     <View> 
-      <View style= {styles.header}>
-        <Text style={styles.text}>Lets Trash it!</Text>
-        <TouchableOpacity 
-        style= {styles.friendicon}
-        onPress= {toggleModel}>
-          <FontAwesome5 name= "user-friends" size={24} color= "black" />
-        </TouchableOpacity>
+      <View style={{width: "100%", height: 80}}>
+        <Card onPress={() => {
+            navigation.navigate("Activities");
+        }}>
+          <Card.Title title= "Add New Activity"/>
+        </Card>
       </View>
+        
       <Modal 
       style= {styles.popup}
       // transparent= {true}
@@ -111,13 +113,52 @@ const HomeScreen = ({ navigation }) => {
     </View>
   );
 };
+
+const Stack = createStackNavigator();
+
+export default function HomeStack({ navigation }) {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen 
+      name="Home" 
+      component={HomeScreen} 
+      options={{
+        headerRight: () => (
+          <TouchableOpacity onPress={() => {
+            navigation.navigate("Catalogue");
+        }}>
+            <View style={styles.icons}>
+              <Feather name="shopping-cart" size={24} color="black" />
+            </View>
+          </TouchableOpacity>
+        ),
+        
+        headerRight: () => (
+          <TouchableOpacity onPress={() => {
+            navigation.navigate("Friends");
+        }}>
+            <View style={styles.friendicon}>
+              <FontAwesome5 name="user-friends" size={24} color="black" />
+            </View>
+          </TouchableOpacity>
+        )
+      
+      }} 
+        />
+        <Stack.Screen options={{headerShown: false}} name="Activities" component={ActivityScreen} />
+        <Stack.Screen name="Catalogue" component={CatalogueScreen} />
+        <Stack.Screen name="Friends" component={FriendsScreen} />
+    </Stack.Navigator>
+  );
+}
+
 const styles = StyleSheet.create({
   header:{
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
   friendicon:{
-    marginRight: 10,
+    marginRight: 100,
     marginTop: 5
   },
   text: {
@@ -142,7 +183,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 10
     
-  }
-});
+  },
+  icons: {
+    marginRight: 20,
+  },
 
-export default HomeScreen;
+});
