@@ -83,9 +83,9 @@ export default function ProfileStack({ navigation }) {
         )}} 
       />
       <Stack.Screen name="Recycling History" component={RecyclingHistoryScreen} />
-      <Stack.Screen name="Rewards" component={RewardsScreen} />
+      <Stack.Screen options={{headerShown: false}} name="Rewards" component={RewardsScreen} />
       <Stack.Screen options={{headerShown: false}} name="Settings" component={SettingsScreen} />
-      <Stack.Screen name="Appointments" component={AppointmentsScreen} />
+      <Stack.Screen options={{headerShown: false}} name="Appointments" component={AppointmentsScreen} />
     </Stack.Navigator>
   );
 }

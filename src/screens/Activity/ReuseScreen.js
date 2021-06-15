@@ -2,9 +2,7 @@ import React, {useState} from 'react';
 import { Text, StyleSheet, View, Button, ScrollView, TextInput } from 'react-native';
 import Modal from 'react-native-modal';
 import { Card } from 'react-native-paper';
-//import {Camera} from 'expo-camera'
-// waiting for the camera to work
-
+import {Camera} from 'expo-camera';
 
 const Reuse = ({ navigation }) => {
     const [isVisible, setVisible]= useState(false);
