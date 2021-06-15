@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { Text, StyleSheet, View, Button, ScrollView, TextInput } from 'react-native';
+//import {Camera} from 'expo-camera'
+// waiting for the camera to work
 
 
 const Reuse = ({ navigation }) => {
