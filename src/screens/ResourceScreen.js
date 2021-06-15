@@ -2,15 +2,15 @@ import React, {useState} from 'react';
 import { Text, StyleSheet, View, Button, ScrollView, Dimensions } from 'react-native';
 import { Card } from 'react-native-paper';
 import {FontAwesome, FontAwesome5, Foundation} from '@expo/vector-icons';
+import { createStackNavigator } from "@react-navigation/stack";
 
 // import images into each text and fill legit infomation to each text
 // icons for contributions
 const  {height, width}= Dimensions.get("window");
-const ResourceScreen = ({ navigation }) => {
+function ResourceScreen ({ navigation }) {
       
   return (
     <View> 
-      <Text style={styles.text}>Waste Articles!</Text>
       <ScrollView>
       <View style= {styles.header}> 
             <Text style={styles.text}>Latest News!</Text>
@@ -109,6 +109,15 @@ const ResourceScreen = ({ navigation }) => {
   );
 };
 
+const Stack = createStackNavigator();
+
+export default function SettingsStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Articles" component={ResourceScreen} />
+    </Stack.Navigator>
+  );
+}
 
 const styles = StyleSheet.create({
   text: {
@@ -131,5 +140,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ResourceScreen;
 
