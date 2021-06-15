@@ -19,12 +19,15 @@ const Activity1Screen = ({ navigation }) => {
             onPress={() => navigation.navigate('Activity2')}
             title="Reduce!"/>
         </View>
-        <TouchableOpacity onPress= {()=> setPressed1 (!pressed1)} style= {styles.catergory}>
-            <Text> Plastic </Text> 
-            {pressed1? 
-            <AntDesign style= {styles.iconStyle} name="plussquareo"/>
-            : null}
-        </TouchableOpacity>
+        <Card>
+            <TouchableOpacity onPress= {()=> setPressed1 (!pressed1)} style= {styles.catergory}>
+                <Text> Plastic </Text> 
+                {pressed1? 
+                <AntDesign style= {styles.iconStyle} name="plussquareo"/>
+                : null}
+            </TouchableOpacity>
+        </Card> 
+       
         <TouchableOpacity  onPress= {()=> setPressed2 (!pressed2)} style= {styles.catergory}>
             <Text> Glass </Text> 
             {pressed2? 

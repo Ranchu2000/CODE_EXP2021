@@ -4,7 +4,7 @@ import { Card } from 'react-native-paper';
 import {FontAwesome, FontAwesome5, Foundation} from '@expo/vector-icons';
 
 // import images into each text and fill legit infomation to each text
-// contr
+// icons for contributions
 const  {height, width}= Dimensions.get("window");
 const ResourceScreen = ({ navigation }) => {
       
