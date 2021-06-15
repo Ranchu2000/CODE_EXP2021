@@ -4,7 +4,6 @@ import { Text, StyleSheet, View, Button, ScrollView, TextInput } from 'react-nat
 //import {Camera} from 'expo-camera'
 // waiting for the camera to work
 
-
 const Reuse = ({ navigation }) => {
     const [pressed, setPressed]= useState();
     const [startCamera,setStartCamera] = React.useState(false);
