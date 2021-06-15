@@ -39,7 +39,7 @@ function ProfileScreen({ navigation }) {
         <Card style={styles.card} onPress={() => {
             navigation.navigate("Rewards");
         }}>
-          <Card.Title title= "Total Points Accumulated: 150"/>
+          <Card.Title title= "Total Coins: 3000"/>
           <Card.Cover source={{ uri: 
             "https://cdn2.vectorstock.com/i/1000x1000/79/76/pink-piggy-bank-with-falling-golden-coins-saving-vector-19647976.jpg" }} />
           <Card.Actions>
