@@ -8,8 +8,8 @@ function AppointmentsScreen({ navigation }) {
     return (
       <SafeAreaView style={styles.container}>
         <List.Item
-          title="Collection of Plastic Waste"
-          description="30/6/21, 12:00pm"
+          title="  Collection of Plastic Waste"
+          description="  30/6/21, 12:00pm"
           left={props => 
           <View style={styles.icons}>
             <FontAwesome5 name="prescription-bottle" size={24} color="black" />

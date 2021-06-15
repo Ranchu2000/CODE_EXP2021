@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
-import { Text, StyleSheet, View, Button, ScrollView, TextInput } from 'react-native';
+import { Text, StyleSheet, View, Button, ScrollView, TextInput, Picker } from 'react-native';
 import {FontAwesome, FontAwesome5, Feather, AntDesign, Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Avatar, Card, List, Title, Paragraph } from 'react-native-paper';
 import Modal from 'react-native-modal';
+import DateTimePicker from '@react-native-community/datetimepicker';
+
 
 const Recycle = ({ navigation }) => {
     const [pressed1, setPressed1]= useState();
@@ -11,14 +13,15 @@ const Recycle = ({ navigation }) => {
     const [pressed3, setPressed3]= useState();
     const [pressed4, setPressed4]= useState();
     const [isVisible1, setVisible1]= useState(false);
-    const [isVisible2, setVisible2]= useState(false);
-    const [isVisible3, setVisible3]= useState(false);
-    const [isVisible4, setVisible4]= useState(false);
+    const[expanded, setExpanded]= useState(false);
+    const [selectedValue, setSelectedValue]= useState("");
+    const [date, setDate]= useState(new Date());
 
 
     return (
     <ScrollView style={{flex: 1}}> 
       <View style= {[styles.top, { backgroundColor: '#EAE6EB' }]}>
+      </View>
         <Card style= {styles.topCard}>
             <Card.Title title='What will you be recycling:'/>
         
@@ -66,26 +69,56 @@ const Recycle = ({ navigation }) => {
 
         <Card>
         <Card.Title title= "Arrange A Collection!"/>
-        <Card
-        onPress= {()=> setVisible1(true)}
-        style= {styles.optionsStyle}> 
-            <Text style= {styles.optionsText}> Date </Text>
-        </Card>
-        <Card
-        onPress= {()=> setVisible2(true)}
-        style= {styles.optionsStyle}> 
-            <Text style= {styles.optionsText}> Timeslot </Text>
-        </Card>
-        <Card
-        onPress= {()=> setVisible3(true)}
-        style= {styles.optionsStyle}> 
-            <Text style= {styles.optionsText}> Weight</Text>
-        </Card>
-        <Card
-        onPress= {()=> setVisible4(true)}
-        style= {styles.optionsStyle}> 
-            <Text style= {styles.optionsText}> Upload </Text>
-        </Card>
+
+       
+        <List.Accordion
+            title= "date"
+            >
+            {/* <DatePicker
+                date= {date}
+                onDateChange={setDate}
+                value
+                /> */}
+        </List.Accordion>
+        <List.Accordion
+            title= "Timeslot">
+            <Picker
+                selectedValue= {selectedValue}
+                onValueChange= {(itemValue, itemIndex) => setSelectedValue(itemValue)}>
+                <Picker.Item label="06:00am" value="06" />
+                <Picker.Item label="07:00am" value="07" />
+                <Picker.Item label="08:00am" value="08" />
+                <Picker.Item label="09:00am" value="09" />
+                <Picker.Item label="10:00am" value="10" />
+                <Picker.Item label="11:00am" value="11" />
+                <Picker.Item label="12:00pm" value="12" />
+                <Picker.Item label="01:00pm" value="13" />
+                <Picker.Item label="02:00pm" value="14" />
+                <Picker.Item label="03:00pm" value="15" />
+                <Picker.Item label="04:00pm" value="16" />
+                <Picker.Item label="05:00pm" value="17" />
+                <Picker.Item label="06:00pm" value="18" />
+                <Picker.Item label="07:00pm" value="19" />
+                <Picker.Item label="08:00pm" value="20" />
+                <Picker.Item label="09:00pm" value="21" />
+                <Picker.Item label="10:00pm" value="22" />
+            </Picker>
+        </List.Accordion>
+        <List.Accordion
+            title= "Weight">
+            <Text> Minimum 5KG </Text>
+            <Picker
+                selectedValue= {selectedValue}
+                onValueChange= {(itemValue, itemIndex) => setSelectedValue(itemValue)}>
+                <Picker.Item label="5KG" value="05" />
+                <Picker.Item label="6KG" value="06" />
+                <Picker.Item label="7KG" value="07" />
+                <Picker.Item label="8KG" value="08" />
+                <Picker.Item label="9KG" value="09" />
+                <Picker.Item label="10KG" value="10" />
+                <Picker.Item label=" above 10KG" value="10" />
+            </Picker>
+        </List.Accordion>
         <TouchableOpacity 
             style={styles.submitParent}
             onPress= {()=> setVisible1(true)}>
@@ -107,9 +140,6 @@ const Recycle = ({ navigation }) => {
                 </Card.Content>
             </Card>
         </Modal>
-    
-        
-        
     
     </ScrollView>
   );

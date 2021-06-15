@@ -15,12 +15,9 @@ function ProfileScreen({ navigation }) {
         <Text style={styles.header}>Welcome, John!</Text>
         
         <Card style={styles.card} onPress={() => {
-            navigation.navigate("Appointments");
-        }}>
-          <Card.Title/>
-          <Card.Content>
-            <Title>My Appointments: </Title>
-          </Card.Content>
+            navigation.navigate("Appointments");}}>
+          <Card.Title
+            title= "My Appointments: "/>
           <Card.Cover source={{ uri: 
             "https://www.apptoto.com/wp-content/uploads/2017/06/calendar-appointment-confirmed.jpg" }} />
           <Card.Actions>
@@ -31,11 +28,7 @@ function ProfileScreen({ navigation }) {
         <Card style={styles.card} onPress={() => {
             navigation.navigate("Recycling History");
         }}>
-          <Card.Title/>
-          <Card.Content>
-            <Title>Total Trash Recycled: </Title>
-            <Text style={styles.accentedText}>50kg</Text>
-          </Card.Content>
+          <Card.Title title= "Total Trash Recycled: 50kg"/>
           <Card.Cover source={{ uri: 
             "https://www.kindpng.com/picc/m/117-1170347_transparent-line-graph-clipart-chart-icon-png-png.png" }} />
           <Card.Actions>
@@ -46,11 +39,7 @@ function ProfileScreen({ navigation }) {
         <Card style={styles.card} onPress={() => {
             navigation.navigate("Rewards");
         }}>
-          <Card.Title/>
-          <Card.Content>
-            <Title>Total Earned: </Title>
-            <Text style={{fontSize: 30, fontWeight: "bold"}}>$13.56</Text>
-          </Card.Content>
+          <Card.Title title= "Total Points Accumulated: 150"/>
           <Card.Cover source={{ uri: 
             "https://cdn2.vectorstock.com/i/1000x1000/79/76/pink-piggy-bank-with-falling-golden-coins-saving-vector-19647976.jpg" }} />
           <Card.Actions>
@@ -101,18 +90,15 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    flex: 1,
     marginBottom: 20,
     justifyContent: 'space-around',
   },
  
   header: {
     fontSize: 30,
-    fontWeight: "bold"
-  },
-  accentedText: {
-    fontSize: 30, 
-    fontWeight: "bold"
+    fontWeight: "bold",
+    marginTop: 10,
+    marginBottom: 10
   },
   buttonText: {
     fontSize: 16, 
