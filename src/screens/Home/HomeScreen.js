@@ -169,10 +169,16 @@ const Stack = createStackNavigator();
 export default function HomeStack({ navigation }) {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
+      <Stack.Screen
       name="Home" 
       component={HomeScreen} 
       options={{
+        headerStyle: {backgroundColor: '#5DBB63'},
+        headerTintColor: 'black',
+        headerTitleStyle: {fontWeight: 'bold'},
+        title: "RecycleSG",
+        headerTitleStyle: {fontFamily: "Verdana", fontWeight: "bold"},
+
         headerRight: () => (
           <View style= {styles.topBarRight} >
             <TouchableOpacity onPress={() => {
@@ -199,7 +205,18 @@ export default function HomeStack({ navigation }) {
         />
         <Stack.Screen options={{headerShown: false}} name="Activities" component={ActivityScreen} />
         <Stack.Screen options={{headerShown: false}} name="Catalogue" component={CatalogueScreen} />
-        <Stack.Screen name="Friends" component={FriendsScreen} />
+        <Stack.Screen 
+        options={{
+          headerStyle: {
+            backgroundColor: '#5DBB63',
+          },
+          headerTintColor: 'black',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+        name="Friends" 
+        component={FriendsScreen} />
     </Stack.Navigator>
   );
 }

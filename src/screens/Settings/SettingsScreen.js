@@ -108,7 +108,17 @@ const Stack = createStackNavigator();
 export default function SettingsStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Settings" component={SettingsScreen} />
+      <Stack.Screen options={{
+        headerStyle: {
+          backgroundColor: '#5DBB63',
+        },
+        headerTintColor: 'black',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }} 
+      name="Settings" 
+      component={SettingsScreen} />
       <Stack.Screen name="Details" component={DetailsScreen} />
     </Stack.Navigator>
   );

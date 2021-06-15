@@ -29,7 +29,7 @@ function ResourceScreen ({ navigation }) {
             <Card.Title title= "Recycling Efforts at Punggol Sector"/> 
             <Card.Cover source= {require('../Images/punggol1.jpg')} />
             <Card.Content>
-                  <Text>People living and working in the City-Punggol sector can look forward to smarter and more sustainable services for public waste collection and recycling under a new contract awarded to SembWaste.
+                  <Text style={styles.articleText}>People living and working in the City-Punggol sector can look forward to smarter and more sustainable services for public waste collection and recycling under a new contract awarded to SembWaste.
                   Among them is a new fleet of refuse collection trucks that includes 14 electric vehicles, making up almost 20...</Text>
             </Card.Content>
       </Card>
@@ -37,21 +37,21 @@ function ResourceScreen ({ navigation }) {
             <Card.Title title= "More than 300 e-waste recycling bins to be deployed from July"/> 
             <Card.Cover source= {require('../Images/recyclingbin.jpg')} />
             <Card.Content>
-                  <Text>More than 300 electrical and electronic waste (e-waste) recycling bins will be deployed across Singapore in public areas from Jul 1, said the National Environment Agency (NEA).The move is part of NEA’s e-waste Extended Producer Responsibility (EPR) scheme, which began with a soft launch on Friday...</Text>
+                  <Text style={styles.articleText}>More than 300 electrical and electronic waste (e-waste) recycling bins will be deployed across Singapore in public areas from Jul 1, said the National Environment Agency (NEA).The move is part of NEA’s e-waste Extended Producer Responsibility (EPR) scheme, which began with a soft launch on Friday...</Text>
             </Card.Content>
       </Card>
       <Card style= {styles.post}>
             <Card.Title title= "37 projects to receive $3.7 million under SG Eco Fund"/> 
             <Card.Cover source= {require('../Images/ecofund.jpg')} />
             <Card.Content>
-                  <Text>A total of 37 green projects will receive $3.7 million in grants under the SG Eco Fund set up to aid sustainability efforts, Minister for Sustainability and the Environment Grace Fu announced on Saturday (May 22).Of these, 25 projects will receive up to $50,000 in funding, while the remaining 12 will...</Text>
+                  <Text style={styles.articleText}>A total of 37 green projects will receive $3.7 million in grants under the SG Eco Fund set up to aid sustainability efforts, Minister for Sustainability and the Environment Grace Fu announced on Saturday (May 22).Of these, 25 projects will receive up to $50,000 in funding, while the remaining 12 will...</Text>
             </Card.Content>
       </Card>
       <Card style= {styles.post}>
             <Card.Title title= "Singapore's recycling rate falls to 10-year low"/> 
             <Card.Cover source= {require('../Images/recyclingrates.jpg')} />
             <Card.Content>
-                  <Text>For a developed country, Singapore's domestic recycling rate was already low, at 17 per cent. Covid has been blamed for pushing down recycling rates further, although less waste was generated last year compared to 2019.The city-state’s overall recycling rate in 2020 was 52 per cent, down from 59 per...</Text>
+                  <Text style={styles.articleText}>For a developed country, Singapore's domestic recycling rate was already low, at 17 per cent. Covid has been blamed for pushing down recycling rates further, although less waste was generated last year compared to 2019.The city-state’s overall recycling rate in 2020 was 52 per cent, down from 59 per...</Text>
             </Card.Content>
       </Card>
       
@@ -119,10 +119,21 @@ export default function ResourceStack({ navigation }) {
           <Stack.Screen 
           name="Resource" 
           component={ResourceScreen} 
+   
           options={{
+            headerStyle: {backgroundColor: '#5DBB63'},
+            headerTintColor: 'black',
+            headerTitleStyle: {fontWeight: 'bold'},
           }} 
             />
-            <Stack.Screen name="Article" component={ArticleScreen} />
+            <Stack.Screen 
+            options={{
+                  headerStyle: {backgroundColor: '#5DBB63'},
+                  headerTintColor: 'black',
+                  headerTitleStyle: {fontWeight: 'bold'},
+                }} 
+            name="Article" 
+            component={ArticleScreen} />
         </Stack.Navigator>
       );
     }
@@ -150,7 +161,12 @@ const styles = StyleSheet.create({
   },
   background: {
       flexDirection: 'row'
+  },
+  articleText: {
+        textAlign: 'justify', 
+        margin: 20
   }
+  
 });
 
 

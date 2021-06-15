@@ -12,7 +12,12 @@ const Tab = createMaterialTopTabNavigator();
 
 function ActivityScreen({ navigation }) {
   return(
-    <Tab.Navigator>
+    <Tab.Navigator 
+    tabBarOptions={{
+      activeTintColor: 'black',
+      labelStyle: { fontSize: 14 },
+      style: { backgroundColor: '#5DBB63' },
+    }}>
         <Tab.Screen name="Recycle" component={Recycle} />
         <Tab.Screen name="Reuse" component={Reuse} />
     </Tab.Navigator>
@@ -24,7 +29,14 @@ const Stack = createStackNavigator();
 export default function ActivityStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Activities" component={ActivityScreen} />
+      <Stack.Screen 
+      options={{
+        headerStyle: {backgroundColor: '#5DBB63'},
+        headerTintColor: 'black',
+        headerTitleStyle: {fontWeight: 'bold'},
+      }} 
+      name="Activities" 
+      component={ActivityScreen} />
     </Stack.Navigator>
   );
 }
