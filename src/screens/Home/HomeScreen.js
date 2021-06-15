@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Text, StyleSheet, View, Button, ScrollView, TouchableOpacity, TextInput, Dimensions} from 'react-native';
-import {Feather, FontAwesome5} from '@expo/vector-icons';
+import {Feather, FontAwesome5, Ionicons} from '@expo/vector-icons';
 import { Card } from 'react-native-paper';
 import Modal from 'react-native-modal';
 import { createStackNavigator } from "@react-navigation/stack";
@@ -14,18 +14,18 @@ const  {height, width}= Dimensions.get("window");
 
 function HomeScreen ({ navigation }) {
   const [isVisible, setVisible]= useState(false);
-  const [pressed, setPressed]= useState();
+  const [pressed, setPressed]= useState(false);
   return (
-    <View> 
-      <View style={{width: "100%", height: 80}}>
+    <View style= {styles.screen}> 
+      <View style={styles.header}>
         <Card onPress={() => {
             navigation.navigate("Activities");
         }}>
-          <Card.Title title= "Add New Activity"/>
+          <Card.Title title= "Add New Activity" style= {styles.headerText}/>
         </Card>
       </View>
         
-      <Modal 
+      {/* <Modal 
       style= {styles.popup}
       // transparent= {true}
       onBackdropPress={()=>
@@ -58,16 +58,20 @@ function HomeScreen ({ navigation }) {
             : null}
           </Card.Content>
         </Card>
-      </Modal>
+      </Modal> */}
     
       <ScrollView>
       <Card style= {styles.card}>
         <Card.Title title= "Recycling Activity By Yu Fei"/>
-        <Card.Content>
-          <Text> 14th June 2021 0900hrs </Text>
-          <Text> Recycled 5kg of Paper</Text>
-          <Text> 2 Reward Points Earned!</Text>
-        </Card.Content>
+        <View style= {styles.postprofile}>
+          <Card.Content>
+            <Text> 14th June 2021 0900hrs </Text>
+            <Text> Recycled 5kg of Paper</Text>
+            <Text> 2 Reward Points Earned!</Text>
+          </Card.Content>
+          <Ionicons name= "person-circle-sharp" style= {styles.friendprofile} />
+        </View>
+        
       </Card>
       <Card style= {styles.card}>
         <Card.Title title= " Reducing Activity By Jian Rong:"/>
@@ -153,9 +157,24 @@ export default function HomeStack({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  screen:{
+    marginBottom: 80
+  },
   header:{
+    marginBottom: 5,
+  },
+  headerText:{
+    marginLeft: width * 0.25
+  },
+  postprofile:{
     flexDirection: 'row',
     justifyContent: 'space-between'
+  },
+  friendprofile:{
+    fontSize: 44,
+    color: 'black',
+    marginRight: 30,
+    marginBottom: 10
   },
   friendicon:{
     marginRight: 100,
@@ -176,13 +195,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginLeft: 10,
     width: width * 0.65,
-    
-
   },
   searchbar:{
     flexDirection: 'row',
     marginBottom: 10
-    
   },
   icons: {
     marginRight: 20,
