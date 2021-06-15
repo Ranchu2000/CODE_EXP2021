@@ -5,6 +5,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Recycle from './RecycleScreen';
 import Reuse from './ReuseScreen';
+import { Avatar, Card, List, Title, Paragraph } from 'react-native-paper';
+
 const Tab = createMaterialTopTabNavigator();
 
 export default function ActivityScreen() {

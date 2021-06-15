@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from "@react-navigation/stack";
 import { Avatar, Button, Card, List, Title, Paragraph } from 'react-native-paper';
-import RecycleScreen from './RecycleScreen';
+import RecyclingHistoryScreen from './RecyclingHistoryScreen';
 import RewardsScreen from './RewardsScreen';
 import AppointmentsScreen from './AppointmentsScreen';
 import { Feather } from '@expo/vector-icons'; 
@@ -29,7 +29,7 @@ function ProfileScreen({ navigation }) {
         </Card>
         
         <Card style={styles.card} onPress={() => {
-            navigation.navigate("Recycling");
+            navigation.navigate("Recycling History");
         }}>
           <Card.Title/>
           <Card.Content>
@@ -82,7 +82,7 @@ export default function ProfileStack({ navigation }) {
           </TouchableOpacity>
         )}} 
       />
-      <Stack.Screen name="Recycling" component={RecycleScreen} />
+      <Stack.Screen name="Recycling History" component={RecyclingHistoryScreen} />
       <Stack.Screen name="Rewards" component={RewardsScreen} />
       <Stack.Screen options={{headerShown: false}} name="Settings" component={SettingsScreen} />
       <Stack.Screen name="Appointments" component={AppointmentsScreen} />

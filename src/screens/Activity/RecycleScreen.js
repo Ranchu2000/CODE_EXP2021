@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Text, StyleSheet, View, Button, ScrollView, TextInput } from 'react-native';
 import {AntDesign} from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Avatar, Card, List, Title, Paragraph } from 'react-native-paper';
 
 const Recycle = ({ navigation }) => {
     const [pressed1, setPressed1]= useState();

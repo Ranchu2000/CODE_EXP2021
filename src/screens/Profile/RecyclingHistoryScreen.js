@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-export default function RecycleScreen() {
+export default function RecyclingHistoryScreen() {
     return (
-      <Text>This is my recycling screen</Text>
+      <Text>This is my recycling history screen</Text>
     );
   }

@@ -1,21 +1,12 @@
 import React, {useState} from 'react';
-import {StatusBar} from 'expo-status-bar';
 import { Text, StyleSheet, View, Button, ScrollView, TextInput } from 'react-native';
 //import {Camera} from 'expo-camera'
 // waiting for the camera to work
 
+
 const Reuse = ({ navigation }) => {
     const [pressed, setPressed]= useState();
-    const [startCamera,setStartCamera] = React.useState(false);
-    // const __startCamera = async () => {
-    //     const {status} = await Camera.requestPermissionsAsync()
-    //  if(status === 'granted'){
-    //    // do something
-    //    setStartCamera(true)
-    //  }else{
-    //    Alert.alert("Access denied")
-    //  }
-    // }
+    //if (pressed){
         return (
             <View style={{flex: 1}}> 
                 {/* <View style= {styles.top}>
@@ -41,48 +32,8 @@ const Reuse = ({ navigation }) => {
                     <Button title= "Confirm" />
                     </View>
                 : null}
-                {/* {startCamera ? (
-                        <Camera
-                        style={{flex: 1,width:"100%"}} 
-                        ref={(r) => {
-                            camera = r}}
-                        ></Camera>
-                    ) : (
-                        <View
-                        style={{
-                            flex: 1,
-                            backgroundColor: '#fff',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                        >
-                        <TouchableOpacity
-                            onPress={__startCamera}
-                            style={{
-                            width: 130,
-                            borderRadius: 4,
-                            backgroundColor: '#14274e',
-                            flexDirection: 'row',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            height: 40
-                            }}
-                        >
-                            <Text
-                            style={{
-                                color: '#fff',
-                                fontWeight: 'bold',
-                                textAlign: 'center'
-                            }}
-                            >
-                            Take picture
-                            </Text>
-                        </TouchableOpacity>
-                        </View>
-                     )} */}
-            <StatusBar style="auto" />
+                
             </View>)
-
     
 };
 
