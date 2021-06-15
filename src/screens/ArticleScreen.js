@@ -1,9 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import image from './unnamed'
+import { StyleSheet, ScrollView, Text, View, TouchableOpacity, Image, Dimensions } from 'react-native';
+const {height, width}= Dimensions.get("window");
 export default function ArticleScreen() {
     return (
-      <Text>some articles</Text>
+        <ScrollView> 
+            <Text>some articles</Text>
+            <Image source= {require('./unnamed.jpg')} style= {styles.image}/>
+        </ScrollView>
     );
   }
 
+const styles = StyleSheet.create({
+    image:{
+      width: width,
+      height: height,
+      marginLeft: 5,
+      marginRight: 30
+    }
+});

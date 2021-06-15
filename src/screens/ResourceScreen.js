@@ -13,8 +13,8 @@ function ResourceScreen ({ navigation }) {
     <View> 
       <ScrollView>
       <View style= {styles.header}> 
-            <Text style={styles.text}>Latest News!</Text>
-            <FontAwesome name= "newspaper-o" size= {44} color= "black" />
+            <Text style={styles.text}>Latest News!   </Text>
+            <FontAwesome name= "newspaper-o" style= {styles.icons} />
       </View>
       <ScrollView
       horizontal= {true}
@@ -53,7 +53,7 @@ function ResourceScreen ({ navigation }) {
 
     <View style= {styles.header}> 
       <Text style={styles.text}>Recycling Tips!</Text>
-      <Foundation name= "lightbulb" size= {44} color= "black" />
+      <Foundation name= "lightbulb" style= {styles.icons} />
     </View>
       <ScrollView
       horizontal= {true}
@@ -81,8 +81,8 @@ function ResourceScreen ({ navigation }) {
     </ScrollView>
     
     <View style= {styles.header}>
-      <Text style={styles.text}>Contribute!</Text>
-      <FontAwesome5 name= "first-aid" size= {44} color= "black" />
+      <Text style={styles.text}>Contribute!    </Text>
+      <FontAwesome5 name= "first-aid" style= {styles.icons} />
     </View>
       <ScrollView
       horizontal= {true}
@@ -136,9 +136,14 @@ const styles = StyleSheet.create({
       marginTop: 15,
       marginBottom: 15,
   },
+  icons:{
+      fontSize: 44,
+      color: 'black',
+      marginLeft: 20
+  },
   header: {
       flexDirection: 'row',
-      justifyContent: 'space-evenly',
+      justifyContent: 'flex-start',
       marginTop: 10
   },
   post:{
