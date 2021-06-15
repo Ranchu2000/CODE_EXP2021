@@ -46,8 +46,8 @@ const App= function(props){
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'tomato',
-        inactiveTintColor: 'gray',
+        activeTintColor: '#5DBB63',
+        inactiveTintColor: '#9897A9',
       }}
     ><Tab.Screen
           name= "Home"

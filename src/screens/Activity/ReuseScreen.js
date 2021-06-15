@@ -8,7 +8,7 @@ import {Feather, FontAwesome5, Ionicons, FontAwesome, AntDesign, Entypo, Fontist
 const Reuse = ({ navigation }) => {
     const [isVisible, setVisible]= useState(false);
         return (
-            <View> 
+            <View style={[styles.container, { backgroundColor: '#EAE6EB' }]}> 
                 <Button 
                     title= "Scan QR Code"
                     onPress= {()=> setVisible (!isVisible)}/>
