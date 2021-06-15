@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Text, StyleSheet, View, Button, ScrollView, TextInput } from 'react-native';
-import {Feather, AntDesign, MaterialCommunityIcons} from '@expo/vector-icons';
+import {FontAwesome, FontAwesome5, Feather, AntDesign, Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Avatar, Card, List, Title, Paragraph } from 'react-native-paper';
 import Modal from 'react-native-modal';
@@ -18,35 +18,49 @@ const Recycle = ({ navigation }) => {
 
     return (
     <ScrollView style={{flex: 1}}> 
-        <View style= {[styles.top, { backgroundColor: '#EAE6EB' }]}>
-        </View>
+      <View style= {[styles.top, { backgroundColor: '#EAE6EB' }]}>
         <Card style= {styles.topCard}>
             <Card.Title title='What will you be recycling:'/>
+        
             <TouchableOpacity onPress= {()=> setPressed1 (!pressed1)} style= {styles.catergory}>
-                <Text style= {styles.catText}> Plastic </Text>  
+                <View style= {styles.top}> 
+                    <Text style= {styles.catText}> Plastic </Text>  
+                    <FontAwesome5 name="prescription-bottle" size={24} color="black" />
+                </View>
                 {pressed1? 
-                <AntDesign style= {styles.iconStyle} name="plussquareo"/>
+                <MaterialCommunityIcons name= "sticker-check-outline" style= {styles.marker}/>
                 : null}
             </TouchableOpacity>
-        
-        <TouchableOpacity  onPress= {()=> setPressed2 (!pressed2)} style= {styles.catergory}>
-            <Text style= {styles.catText}> Glass </Text> 
-            {pressed2? 
-            <AntDesign style= {styles.iconStyle} name="plussquareo"/>
-            : null}
-        </TouchableOpacity>
-        <TouchableOpacity onPress= {()=> setPressed3 (!pressed3)} style= {styles.catergory}>
-            <Text style= {styles.catText}> Metal </Text> 
-            {pressed3? 
-            <AntDesign style= {styles.iconStyle} name="plussquareo"/>
-            : null}
-        </TouchableOpacity>
-        <TouchableOpacity onPress= {()=> setPressed4 (!pressed4)} style= {styles.catergory}>
-            <Text style= {styles.catText}> Electronics </Text> 
-            {pressed4? 
-            <AntDesign style= {styles.iconStyle} name="plussquareo"/>
-            : null}
-        </TouchableOpacity>
+
+            <TouchableOpacity onPress= {()=> setPressed2 (!pressed2)} style= {styles.catergory}>
+                <View style= {styles.top}> 
+                    <Text style= {styles.catText}> Glass</Text>  
+                    <FontAwesome name= "glass"  style= {styles.icons} />
+                </View>
+                {pressed2? 
+                <MaterialCommunityIcons name= "sticker-check-outline" style= {styles.marker}/>
+                : null}
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress= {()=> setPressed3 (!pressed3)} style= {styles.catergory}>
+                <View style= {styles.top}> 
+                    <Text style= {styles.catText}> Paper </Text>  
+                    <Ionicons name= "newspaper" style= {styles.icons} />
+                </View>
+                {pressed3? 
+                <MaterialCommunityIcons name= "sticker-check-outline" style= {styles.marker}/>
+                : null}
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress= {()=> setPressed4 (!pressed4)} style= {styles.catergory}>
+                <View style= {styles.top}> 
+                    <Text style= {styles.catText}> Electronics </Text>  
+                    <Feather name="hard-drive" style= {styles.icons} />
+                </View>
+                {pressed4? 
+                <MaterialCommunityIcons name= "sticker-check-outline" style= {styles.marker}/>
+                : null}
+            </TouchableOpacity>
         </Card>
 
 
@@ -55,23 +69,28 @@ const Recycle = ({ navigation }) => {
         <Card
         onPress= {()=> setVisible1(true)}
         style= {styles.optionsStyle}> 
-            <Text style= {styles.optionsText}> Select a Date </Text>
+            <Text style= {styles.optionsText}> Date </Text>
         </Card>
         <Card
         onPress= {()=> setVisible2(true)}
         style= {styles.optionsStyle}> 
-            <Text style= {styles.optionsText}> Select a Timeslot </Text>
+            <Text style= {styles.optionsText}> Timeslot </Text>
         </Card>
         <Card
         onPress= {()=> setVisible3(true)}
         style= {styles.optionsStyle}> 
-            <Text style= {styles.optionsText}> Weight of item</Text>
+            <Text style= {styles.optionsText}> Weight</Text>
         </Card>
         <Card
         onPress= {()=> setVisible4(true)}
         style= {styles.optionsStyle}> 
-            <Text style= {styles.optionsText}> Upload item image </Text>
+            <Text style= {styles.optionsText}> Upload </Text>
         </Card>
+        <TouchableOpacity 
+            style={styles.submitParent}
+            onPress= {()=> setVisible1(true)}>
+            <Feather name= "send" style={styles.submit} />
+        </TouchableOpacity>
         </Card>
 
         <Modal 
@@ -79,45 +98,16 @@ const Recycle = ({ navigation }) => {
             onBackdropPress={()=>setVisible1(false)}
             visible= {isVisible1}>
             <Card>
-                <Card.Title title= "Select a Date"/>
+                <Card.Title 
+                    title= "Collection Confirmed"/>
                 <Card.Content>
-                    <Text> Insert Calender Image </Text>
+                    <Text>Collection will take place on 07/07/2021 at 08:00am </Text>
+                    <Text>To manage appointments, refer to 'My Appointments' on the Profile Page. </Text>
+                    <Text>Thank you for doing your part to recycle!</Text>
                 </Card.Content>
             </Card>
         </Modal>
-        <Modal 
-            style= {styles.popup}
-            onBackdropPress={()=>setVisible2(false)}
-            visible= {isVisible2}>
-            <Card>
-                <Card.Title title= "Select a Time"/>
-                <Card.Content>
-                    <Text> Insert Scroll Selection </Text>
-                </Card.Content>
-            </Card>
-        </Modal>
-        <Modal 
-            style= {styles.popup}
-            onBackdropPress={()=>setVisible3(false)}
-            visible= {isVisible3}>
-            <Card>
-                <Card.Title title= "Approximate Item Weight:"/>
-                <Card.Content>
-                    <Text> Insert Scroll Selection </Text>
-                </Card.Content>
-            </Card>
-        </Modal>
-        <Modal 
-            style= {styles.popup}
-            onBackdropPress={()=>setVisible4(false)}
-            visible= {isVisible4}>
-            <Card>
-                <Card.Title title= "Upload the image item:"/>
-                <Card.Content>
-                    <Text> gg?? </Text>
-                </Card.Content>
-            </Card>
-        </Modal>
+    
         
         
     
@@ -134,7 +124,6 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     catText:{
-        marginTop: 5,
         fontSize: 30,
         marginLeft: 10
     },
@@ -144,10 +133,7 @@ const styles = StyleSheet.create({
         height: 40
     },
     iconStyle: {
-        fontSize: 35,
-        color: "black",
-        marginTop: 3,
-        marginRight: 3,
+       
     },
     CalendarStyle:{
         height: 250,
@@ -166,8 +152,27 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontSize: 30,
         marginLeft: 10,
+    },
+    icons:{
+        fontSize: 24,
+        color: "black"
+    },
+    marker:{
+        fontSize: 30,
+        color: "black",
+        marginRight: 10,
+    },
+    submit:{
+        fontSize: 40,
+        color: 'black',
+        marginTop: 10,
+        marginBottom: 10,
+        
+    },
+    submitParent:{
+        alignItems: 'center',
     }
-
+    
 });
 
 export default Recycle;

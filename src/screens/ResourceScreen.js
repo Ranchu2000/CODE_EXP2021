@@ -26,15 +26,18 @@ function ResourceScreen ({ navigation }) {
             onPress={() => {
                   navigation.navigate("Article");}}
                   >
-            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Title title= "Recycling Efforts at Punggol Sector"/> 
+            <Card.Cover source= {require('../Images/punggol1.jpg')} />
             <Card.Content>
-                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+                  <Text>People living and working in the City-Punggol sector can look forward to smarter and more sustainable services for public waste collection and recycling under a new contract awarded to SembWaste.
+                  Among them is a new fleet of refuse collection trucks that includes 14 electric vehicles, making up almost 20...</Text>
             </Card.Content>
       </Card>
       <Card style= {styles.post}>
-            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Title title= "More than 300 e-waste recycling bins to be deployed from July"/> 
+            <Card.Cover source= {require('../Images/recyclingbin.jpg')} />
             <Card.Content>
-                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
+                  <Text>More than 300 electrical and electronic waste (e-waste) recycling bins will be deployed across Singapore in public areas from Jul 1, said the National Environment Agency (NEA).The move is part of NEA’s e-waste Extended Producer Responsibility (EPR) scheme, which began with a soft launch on Friday...</Text>
             </Card.Content>
       </Card>
       <Card style= {styles.post}>
@@ -90,7 +93,7 @@ function ResourceScreen ({ navigation }) {
       showsHorizontalScrollIndicator= {false}
       >
       <Card style= {styles.post}>
-            <Card.Title title= "Lorem ipsum dolor sit amet"/> 
+            <Card.Title title= "Recycling Right at Punggol West"/> 
             <Card.Content>
                   <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque rhoncus urna. Ut ut neque vestibulum mi porttitor mattis. Phasellus molestie varius est, sit amet iaculis quam tincidunt ut. Nunc blandit orci sit amet venenatis scelerisque. Sed odio turpis, blandit rutrum felis sed, fringilla pulvinar nisl. Donec porttitor viverra erat...</Text>
             </Card.Content>
@@ -148,7 +151,7 @@ const styles = StyleSheet.create({
       marginTop: 10
   },
   post:{
-      width: width * 3/4,
+      width: width * 0.9,
       marginLeft: 10
   },
   background: {
