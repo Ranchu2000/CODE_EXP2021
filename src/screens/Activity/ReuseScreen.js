@@ -1,9 +1,15 @@
 import React, {useState} from 'react';
 import {StatusBar} from 'expo-status-bar';
 import { Text, StyleSheet, View, Button, ScrollView, TextInput } from 'react-native';
+<<<<<<< HEAD:src/screens/Activity2Screen.js
 //import {Camera} from 'expo-camera'
 // waiting for the camera to work
 const Activity2Screen = ({ navigation }) => {
+=======
+
+
+const Reuse = ({ navigation }) => {
+>>>>>>> 92dbbd0951f61d36d5c223870a8004c1f3b0169e:src/screens/Activity/ReuseScreen.js
     const [pressed, setPressed]= useState();
     const [startCamera,setStartCamera] = React.useState(false);
     // const __startCamera = async () => {
@@ -17,14 +23,14 @@ const Activity2Screen = ({ navigation }) => {
     // }
         return (
             <View style={{flex: 1}}> 
-                <View style= {styles.top}>
+                {/* <View style= {styles.top}>
                     <Button
                     onPress={() => navigation.navigate('Activity1')}
                     title="Recycle!"/>
                     <Button
                     onPress={() => navigation.navigate('Activity2')}
                     title="Reduce!"/>
-                </View>
+                </View> */}
                 <Button 
                     title= "Scan QR Code"
                     onPress= {()=> setPressed (!pressed)}
@@ -107,4 +113,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Activity2Screen;
+export default Reuse;

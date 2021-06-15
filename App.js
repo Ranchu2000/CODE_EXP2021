@@ -6,8 +6,9 @@ import LoginScreen from './src/screens/LoginScreen';
 import ResourceScreen from './src/screens/ResourceScreen';
 import SettingsScreen from './src/screens/Settings/SettingsScreen';
 import ProfileScreen from './src/screens/Profile/ProfileScreen';
-import Activity1Screen from './src/screens/Activity1Screen';
-import Activity2Screen from './src/screens/Activity2Screen';
+import Recycle from './src/screens/Activity/RecycleScreen';
+import Reuse from './src/screens/Activity/ReuseScreen';
+import ActivityScreen from './src/screens/Activity/ActivityScreen'
 
 import {Feather} from '@expo/vector-icons';
 
@@ -34,8 +35,10 @@ const App= function(props){
             iconName = 'user';
           } else if (route.name === 'Home') {
             iconName = 'home';
-          } else if (route.name === 'Waste Articles') {
-            iconName = 'trash-2';
+          } else if (route.name === 'Resource') {
+            iconName = 'grid';
+          } else if (route.name === 'Activity') {
+            iconName = 'plus-circle';
           }
 
           // You can return any component that you like here!
@@ -58,21 +61,18 @@ const App= function(props){
     />
 
     <Tab.Screen
+          name= "Activity"
+          component={ActivityScreen}
+          options={{title: 'Activity'}}
+      />
+    
+    <Tab.Screen
           name= "Profile"
           component={ProfileScreen}
           options={{title: 'Profile'}}
       />
 
-    <Tab.Screen
-          name= "Activity1"
-          component={Activity1Screen}
-          options={{title: 'Activity'}}
-     />
-    <Tab.Screen
-          name= "Activity2"
-          component={Activity2Screen}
-          options={{title: 'Activity'}}
-      />
+
     </Tab.Navigator>
     </NavigationContainer>
   )

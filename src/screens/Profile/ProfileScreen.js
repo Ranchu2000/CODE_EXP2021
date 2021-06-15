@@ -11,7 +11,7 @@ import SettingsScreen from "../Settings/SettingsScreen"
 function ProfileScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <Text style={styles.header}>Welcome, John!</Text>
         
         <Card style={styles.card} onPress={() => {
@@ -84,7 +84,7 @@ export default function ProfileStack({ navigation }) {
       />
       <Stack.Screen name="Recycling" component={RecycleScreen} />
       <Stack.Screen name="Rewards" component={RewardsScreen} />
-      <Stack.Screen name="Settings" component={SettingsScreen} />
+      <Stack.Screen options={{headerShown: false}} name="Settings" component={SettingsScreen} />
       <Stack.Screen name="Appointments" component={AppointmentsScreen} />
     </Stack.Navigator>
   );

@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, Button, ScrollView, TextInput } from 'react-nat
 import {AntDesign} from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Activity1Screen = ({ navigation }) => {
+const Recycle = ({ navigation }) => {
     const [pressed1, setPressed1]= useState();
     const [pressed2, setPressed2]= useState();
     const [pressed3, setPressed3]= useState();
@@ -12,12 +12,12 @@ const Activity1Screen = ({ navigation }) => {
     return (
     <ScrollView style={{flex: 1}}> 
         <View style= {styles.top}>
-            <Button
+            {/* <Button
             onPress={() => navigation.navigate('Activity1')}
             title="Recycle!"/>
             <Button
             onPress={() => navigation.navigate('Activity2')}
-            title="Reduce!"/>
+            title="Reduce!"/> */}
         </View>
         <Card>
             <TouchableOpacity onPress= {()=> setPressed1 (!pressed1)} style= {styles.catergory}>
@@ -84,4 +84,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Activity1Screen;
+export default Recycle;
