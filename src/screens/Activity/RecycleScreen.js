@@ -1,20 +1,22 @@
 import React, {useState} from 'react';
-import { Text, StyleSheet, View, Button, ScrollView, TextInput, Picker } from 'react-native';
+import { Text, StyleSheet, View, Button, ScrollView, TextInput, Dimensions, Picker } from 'react-native';
 import {FontAwesome, FontAwesome5, Feather, AntDesign, Ionicons, MaterialCommunityIcons} from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Avatar, Card, List, Title, Paragraph } from 'react-native-paper';
 import Modal from 'react-native-modal';
 import DateTimePicker from '@react-native-community/datetimepicker';
-
+const {height, width}= Dimensions.get("window");
 
 const Recycle = ({ navigation }) => {
     const [pressed1, setPressed1]= useState();
     const [pressed2, setPressed2]= useState();
     const [pressed3, setPressed3]= useState();
     const [pressed4, setPressed4]= useState();
+    const [pressed5, setPressed5]= useState();
     const [isVisible1, setVisible1]= useState(false);
     const[expanded, setExpanded]= useState(false);
-    const [selectedValue, setSelectedValue]= useState("");
+    const [selectedValue, setSelectedValue]= useState("Time Slot");
+    const [selectedValue1, setSelectedValue1]= useState("Weight");
     const [date, setDate]= useState(new Date());
 
 
@@ -28,7 +30,7 @@ const Recycle = ({ navigation }) => {
             <TouchableOpacity onPress= {()=> setPressed1 (!pressed1)} style= {styles.catergory}>
                 <View style= {styles.top}> 
                     <Text style= {styles.catText}> Plastic </Text>  
-                    <FontAwesome5 name="prescription-bottle" size={24} color="black" />
+                    <FontAwesome5 name="prescription-bottle" style= {styles.icons}  />
                 </View>
                 {pressed1? 
                 <MaterialCommunityIcons name= "sticker-check-outline" style= {styles.marker}/>
@@ -57,13 +59,24 @@ const Recycle = ({ navigation }) => {
 
             <TouchableOpacity onPress= {()=> setPressed4 (!pressed4)} style= {styles.catergory}>
                 <View style= {styles.top}> 
-                    <Text style= {styles.catText}> Electronics </Text>  
-                    <Feather name="hard-drive" style= {styles.icons} />
+                    <Text style= {styles.catText}> Metal </Text>  
+                    <FontAwesome5 name="drum-steelpan" style= {styles.icons} />
                 </View>
                 {pressed4? 
                 <MaterialCommunityIcons name= "sticker-check-outline" style= {styles.marker}/>
                 : null}
             </TouchableOpacity>
+
+            <TouchableOpacity onPress= {()=> setPressed4 (!pressed5)} style= {styles.catergory}>
+                <View style= {styles.top}> 
+                    <Text style= {styles.catText}> Electronics </Text>  
+                    <Feather name="hard-drive" style= {styles.icons} />
+                </View>
+                {pressed5? 
+                <MaterialCommunityIcons name= "sticker-check-outline" style= {styles.marker}/>
+                : null}
+            </TouchableOpacity>
+
         </Card>
 
 
@@ -72,51 +85,52 @@ const Recycle = ({ navigation }) => {
 
        
         <List.Accordion
-            title= "date"
+            title= "Date"
             >
-            {/* <DatePicker
-                date= {date}
-                onDateChange={setDate}
-                value
-                /> */}
+            <View style={styles.CalendarStyle}>
+                <DateTimePicker
+                    onDateChange={()=>setDate}
+                    value= {date}
+                    />
+            </View>
         </List.Accordion>
         <List.Accordion
-            title= "Timeslot">
+            title= {selectedValue}>
             <Picker
                 selectedValue= {selectedValue}
                 onValueChange= {(itemValue, itemIndex) => setSelectedValue(itemValue)}>
-                <Picker.Item label="06:00am" value="06" />
-                <Picker.Item label="07:00am" value="07" />
-                <Picker.Item label="08:00am" value="08" />
-                <Picker.Item label="09:00am" value="09" />
-                <Picker.Item label="10:00am" value="10" />
-                <Picker.Item label="11:00am" value="11" />
-                <Picker.Item label="12:00pm" value="12" />
-                <Picker.Item label="01:00pm" value="13" />
-                <Picker.Item label="02:00pm" value="14" />
-                <Picker.Item label="03:00pm" value="15" />
-                <Picker.Item label="04:00pm" value="16" />
-                <Picker.Item label="05:00pm" value="17" />
-                <Picker.Item label="06:00pm" value="18" />
-                <Picker.Item label="07:00pm" value="19" />
-                <Picker.Item label="08:00pm" value="20" />
-                <Picker.Item label="09:00pm" value="21" />
-                <Picker.Item label="10:00pm" value="22" />
+                <Picker.Item label="06:00am" value="06:00am" />
+                <Picker.Item label="07:00am" value="07:00am" />
+                <Picker.Item label="08:00am" value="08:00am" />
+                <Picker.Item label="09:00am" value="09:00am" />
+                <Picker.Item label="10:00am" value="10:00am" />
+                <Picker.Item label="11:00am" value="11:00am" />
+                <Picker.Item label="12:00pm" value="12:00pm" />
+                <Picker.Item label="01:00pm" value="01:00pm" />
+                <Picker.Item label="02:00pm" value="02:00pm" />
+                <Picker.Item label="03:00pm" value="03:00pm" />
+                <Picker.Item label="04:00pm" value="04:00pm" />
+                <Picker.Item label="05:00pm" value="05:00pm" />
+                <Picker.Item label="06:00pm" value="06:00pm" />
+                <Picker.Item label="07:00pm" value="07:00pm" />
+                <Picker.Item label="08:00pm" value="08:00pm" />
+                <Picker.Item label="09:00pm" value="09:00pm" />
+                <Picker.Item label="10:00pm" value="10:00pm" />
             </Picker>
         </List.Accordion>
         <List.Accordion
-            title= "Weight">
+            title= {selectedValue1}>
             <Text> Minimum 5KG </Text>
             <Picker
-                selectedValue= {selectedValue}
-                onValueChange= {(itemValue, itemIndex) => setSelectedValue(itemValue)}>
-                <Picker.Item label="5KG" value="05" />
-                <Picker.Item label="6KG" value="06" />
-                <Picker.Item label="7KG" value="07" />
-                <Picker.Item label="8KG" value="08" />
-                <Picker.Item label="9KG" value="09" />
-                <Picker.Item label="10KG" value="10" />
-                <Picker.Item label=" above 10KG" value="10" />
+                selectedValue1= {selectedValue1}
+                onValueChange= {(itemValue, itemIndex) => setSelectedValue1(itemValue)}>
+                <Picker.Item label="5KG" value="5KG" />
+                <Picker.Item label="6KG" value="6KG" />
+                <Picker.Item label="7KG" value="7KG" />
+                <Picker.Item label="8KG" value="8KG" />
+                <Picker.Item label="9KG" value="9KG" />
+                <Picker.Item label="10KG" value="10KG" />
+                <Picker.Item label="> 10KG" value=" above 10KG" />
             </Picker>
         </List.Accordion>
         <TouchableOpacity 
@@ -162,14 +176,9 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         height: 40
     },
-    iconStyle: {
-       
-    },
+
     CalendarStyle:{
-        height: 250,
-        borderRadius: 5,
-        borderColor:'black',
-        borderWidth: 1,
+      marginLeft: width*0.35,
     },
     optionsStyle:{
         height: 50,
@@ -185,7 +194,8 @@ const styles = StyleSheet.create({
     },
     icons:{
         fontSize: 24,
-        color: "black"
+        color: "black",
+        marginTop: 5
     },
     marker:{
         fontSize: 30,
