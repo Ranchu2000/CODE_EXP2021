@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
+import { Component, SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from "@react-navigation/stack";
 import { Avatar, Button, Card, List, Title, Paragraph } from 'react-native-paper';
 import RecyclingHistoryScreen from './RecyclingHistoryScreen';
@@ -12,12 +12,32 @@ function ProfileScreen({ navigation }) {
   return (
     <View style={[styles.container, { backgroundColor: '#EAE6EB' }]}>
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-        <Text style={styles.header}>Welcome, John!</Text>
+        
+        <Card style={styles.card}>
+        <View style={styles.profile}>
+        <Card.Cover 
+          source={{ uri: 'https://i.pinimg.com/originals/d4/8f/b5/d48fb554485e9adfcae86fe6a57efc30.jpg' }}
+          style={{
+            width: 120,
+            height: 120,
+            borderRadius: 60
+          }}
+          />
+           </View>
+          <Card.Title
+            title= "Germaine Lee"
+            style={{alignItems: "center", fontFamily: "Helvetica"}}
+            subtitle="joined on 1/1/21"
+            />
+          
+        </Card>
         
         <Card style={styles.card} onPress={() => {
             navigation.navigate("Appointments");}}>
           <Card.Title
-            title= "My Appointments"/>
+            title= "My Appointments"
+            style={styles.header}/>
+            
           <Card.Cover source={{ uri: 
             "https://www.apptoto.com/wp-content/uploads/2017/06/calendar-appointment-confirmed.jpg" }} />
           <Card.Actions>
@@ -28,7 +48,9 @@ function ProfileScreen({ navigation }) {
         <Card style={styles.card} onPress={() => {
             navigation.navigate("Recycling History");
         }}>
-          <Card.Title title= "Total Trash Recycled: 50kg" fontFamily="Helvetica"/>
+          <Card.Title 
+          title= "Total Trash Recycled: 50kg"
+          style={styles.header}/>
           <Card.Cover source={{ uri: 
             "https://www.kindpng.com/picc/m/117-1170347_transparent-line-graph-clipart-chart-icon-png-png.png" }} />
           <Card.Actions>
@@ -39,7 +61,9 @@ function ProfileScreen({ navigation }) {
         <Card style={styles.card} onPress={() => {
             navigation.navigate("Transactions");
         }}>
-          <Card.Title title= "Total Coins: 3000"/>
+          <Card.Title 
+          title= "Total Coins: 3000"
+          style={styles.header}/>
           <Card.Cover source={{ uri: 
             "https://cdn2.vectorstock.com/i/1000x1000/79/76/pink-piggy-bank-with-falling-golden-coins-saving-vector-19647976.jpg" }} />
           <Card.Actions>
@@ -103,26 +127,39 @@ const styles = StyleSheet.create({
     
   },
   scrollView: {
-    backgroundColor: '#eee',
+    backgroundColor: '#EAE6EB',
     marginHorizontal: 20,
   },
 
   card: {
-    marginBottom: 20,
-    justifyContent: 'space-around',
+    marginVertical: 10,
+    fontFamily: 'Helvetica',
+    // justifyContent: 'space-around',
   },
  
   header: {
     fontSize: 20,
-    marginTop: 10,
-    marginBottom: 10
+    fontFamily: 'Helvetica'
   },
   buttonText: {
     fontSize: 12, 
     color: "#5DBB63",
+    fontFamily: 'Helvetica'
   },
   icons: {
     marginHorizontal: 20,
   },
 
+  image: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+  },
+  profile: {
+    marginTop: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 20,
+    
+  }
 });

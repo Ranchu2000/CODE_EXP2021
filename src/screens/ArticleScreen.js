@@ -18,11 +18,11 @@ export default function ArticleScreen() {
             Among them is a new fleet of refuse collection trucks that includes 14 electric vehicles, making up almost 20 per cent of the fleet to be deployed, said the National Environment Agency (NEA) on Wednesday (Jun 9).
             An on-site food waste treatment system will also be introduced at Geylang Serai Market. Food waste collected from the market will be converted into non-potable water, reducing the amount of waste sent to incineration plants, said NEA.
             The market was selected as it has enough space to house the treatment system and generates a sufficiently large quantity of food waste to reap economies of scale, added the agency.</Text>
-            <Card.Cover source= {require('../Images/punggol1.jpg')} style={{margin:20}} />
+            <Card.Cover source= {require('../Images/punggol1.jpg')} style={styles.image} />
             <Text style={styles.articleText}>The City-Punggol sector covers Hougang, Macpherson and Punggol-West Single Member Constituencies (SMCs) and Sengkang Group Representation Constituency (GRC).
             It also covers parts of Mountbatten and Potong Pasir SMCs, and parts of Aljunied, Ang Mo Kio, Jalan Besar, Marine Parade and Pasir Ris-Punggol GRCs.
             This area comprises about 250,000 households and 16,800 trade premises including hawker and market stalls, shops, places of worship and government buildings, said NEA.</Text>
-            <Card.Cover source= {require('../Images/punggol2.jpg')} style={{margin:20}}/>
+            <Card.Cover source= {require('../Images/punggol2.jpg')} style={styles.image}/>
             <Text style={styles.articleText}>The new contract will see SembWaste roll out ergonomic trucks for better worker comfort and safety, said NEA. Trucks will be fitted with a two-step low entry cabin that makes getting in and out of the truck easier and safer.
             Three recycling trucks will also be fitted with side-loaders, increasing collection efficiency in Housing Board estates as larger 2,200L side-loader recycling bins will be deployed there, added the agency.
             "The lower number of collection rounds and truck trips enhances productivity and also reduces the overall carbon footprint of waste collection services," it said.</Text>
@@ -33,8 +33,15 @@ export default function ArticleScreen() {
   }
 
 const styles = StyleSheet.create({
+
+    image: {
+        marginHorizontal: 20,
+        marginVertical: 4,
+    },
     articleText: {
         textAlign: 'justify', 
-        margin: 20
+        margin: 20,
+        fontFamily: "Helvetica",
+        lineHeight: 18,
   },
 });

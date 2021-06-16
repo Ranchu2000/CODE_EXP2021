@@ -20,6 +20,7 @@ const Tab = createBottomTabNavigator();
 
 const App= function(props){
   return (
+
   <NavigationContainer>
   {/* ensures the exported function is a react component */}
     

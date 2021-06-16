@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     catText:{
-        fontSize: 14,
+        fontSize: 16,
     },
     catergory:{
         flexDirection: "row",
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     },
     optionsText:{
         marginTop: 5,
-        fontSize: 30,
+        fontSize: 24,
         marginLeft: 10,
     },
     icons:{
