@@ -1,12 +1,14 @@
 import React from 'react';
-import { Dimensions, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import {LineChart,
-BarChart,
-PieChart,
-ProgressChart,
-ContributionGraph,
-StackedBarChart
-} from "react-native-chart-kit";
+import { Dimensions, ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import {List, Card} from "react-native-paper";
+import {
+  LineChart,
+  BarChart,
+  PieChart,
+  ProgressChart,
+  ContributionGraph,
+  StackedBarChart
+} from 'react-native-chart-kit'
 
 const data = {
   labels: ["May", "Jun", "Jul", "Aug", "Sep"],
@@ -23,8 +25,8 @@ const data = {
 
 export default function RecyclingHistoryScreen() {
     return (
-      <View>
-      <StackedBarChart
+      <View style={[styles.container, { backgroundColor: '#EAE6EB' }]}>
+      {/* <StackedBarChart
         style={{marginVertical: 8,
           borderRadius: 16}}
         data={data}
@@ -49,8 +51,65 @@ export default function RecyclingHistoryScreen() {
             borderRadius: 16
           },
         }}
-      />
-      </View>
-    );
-  }
+      /> */}
 
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+        
+        <Card style={styles.card}>
+        <Card.Title
+            title= "Recycling"
+            style={styles.header}
+            />
+        <Card.Cover 
+          source={require('./recycleHistoryGraph.png')} 
+          style={styles.image}
+          />       
+        </Card>
+        
+        <Card style={styles.card}>
+          <Card.Title
+            title= "Reusing"
+            style={styles.header}/>
+            
+          <Card.Cover 
+          source={require('./ReuseHistoryGraph.png')}
+          style={styles.image}
+          />
+
+        </Card>
+        
+
+      </ScrollView>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+
+  scrollView: {
+    backgroundColor: '#EAE6EB',
+    marginHorizontal: 20,
+  },
+
+  card: {
+    marginVertical: 10,
+    // justifyContent: 'space-around',
+  },  
+  title: {
+    fontSize: 20,
+
+  },
+
+  image: {
+    width: 450,
+    height: 250
+  }, 
+  topBarRight:{
+    marginRight: 20,
+    marginBottom: 10
+  },
+
+});
